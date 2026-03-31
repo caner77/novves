@@ -19,13 +19,6 @@ function isRateLimited(ip: string): boolean {
   return entry.count > RATE_LIMIT_MAX;
 }
 
-// Nonce generation for CSP
-function generateNonce(): string {
-  const array = new Uint8Array(16);
-  crypto.getRandomValues(array);
-  return Buffer.from(array).toString("base64");
-}
-
 function getLocale(request: NextRequest): string {
   const acceptLanguage = request.headers.get("accept-language") ?? "";
   // Simple locale detection: check if accept-language starts with "en"
@@ -33,7 +26,7 @@ function getLocale(request: NextRequest): string {
   return defaultLocale;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // --- Rate Limiting ---
@@ -59,28 +52,22 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(request.nextUrl);
   }
 
-  // --- CSP with Nonce ---
-  const nonce = generateNonce();
   const cspHeader = [
     `default-src 'self'`,
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`,
+    `script-src 'self' 'unsafe-inline' 'unsafe-eval'`,
     `style-src 'self' 'unsafe-inline'`,
-    `img-src 'self' blob: data:`,
+    `img-src 'self' blob: data: https://i.ytimg.com`,
     `font-src 'self'`,
     `object-src 'none'`,
     `base-uri 'self'`,
     `form-action 'self'`,
+    `frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com`,
     `frame-ancestors 'self'`,
     `upgrade-insecure-requests`,
   ].join("; ");
 
   const response = NextResponse.next();
-
-  // Set CSP header
   response.headers.set("Content-Security-Policy", cspHeader);
-
-  // Pass nonce to server components via request header
-  response.headers.set("x-nonce", nonce);
 
   return response;
 }

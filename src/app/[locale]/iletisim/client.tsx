@@ -489,35 +489,84 @@ export default function IletisimClient({ dict, locale }: { dict: ContactDict; lo
       {/* ── Map ────────────────────────────────────────────── */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-6 flex items-center justify-between">
-            <div>
-              <h2 className="text-xl font-bold text-secondary">{t.mapTitle}</h2>
-              <p className="mt-0.5 text-sm text-gray-400">{t.mapSubtitle}</p>
-            </div>
-            <a
-              href="https://maps.google.com/?q=Zita%C5%9F+Plaza,+Kad%C4%B1k%C3%B6y,+%C4%B0stanbul"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-secondary shadow-sm transition-all duration-200 hover:border-primary/30 hover:text-primary"
-            >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-              {t.openInMap}
-            </a>
-          </div>
+          <h2 className="mb-8 text-xl font-bold text-secondary">{t.mapTitle}</h2>
 
-          <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm" style={{ height: "420px" }}>
-            <iframe
-              title={t.mapIframeTitle}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6!2d29.056!3d40.966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac790b!2sZita%C5%9F+Plaza!5e0!3m2!1str!2str!4v1"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* İstanbul */}
+            <div>
+              <div className="mb-3 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
+                    <svg className="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                  </span>
+                  <span className="text-sm font-semibold text-secondary">İstanbul</span>
+                </div>
+                <a
+                  href="https://www.google.com/maps/place/NOVVES+ELEKTR%C4%B0K+MOTOR+ANON%C4%B0M+%C5%9E%C4%B0RKET%C4%B0/@40.98007,29.0903326,17z/data=!3m1!4b1!4m6!3m5!1s0x14cac75e28bb963d:0x7d993b6e02755dad!8m2!3d40.9800701!4d29.0952035!16s%2Fg%2F11pkc8df_2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-primary transition-colors hover:text-[#e55a28]"
+                >
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                  {t.openInMap}
+                </a>
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm" style={{ height: "380px" }}>
+                <iframe
+                  title="Novves İstanbul"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.1!2d29.0952035!3d40.9800701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac75e28bb963d:0x7d993b6e02755dad!2sNOVVES+ELEKTR%C4%B0K+MOTOR+ANON%C4%B0M+%C5%9E%C4%B0RKET%C4%B0!5e0!3m2!1str!2str!4v1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+
+            {/* Yalova */}
+            <div>
+              <div className="mb-3 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
+                    <svg className="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                  </span>
+                  <span className="text-sm font-semibold text-secondary">Yalova</span>
+                </div>
+                <a
+                  href="https://www.google.com/maps/place/NOVVES+ELEKTR%C4%B0K+MOTOR+ANON%C4%B0M+%C5%9E%C4%B0RKET%C4%B0/@40.6808946,29.40223,17z/data=!3m1!4b1!4m6!3m5!1s0x14cae34dfa345cc7:0x688866be4ac613ae!8m2!3d40.6808946!4d29.4048049!16s%2Fg%2F11pkbxgjdc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-primary transition-colors hover:text-[#e55a28]"
+                >
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                  {t.openInMap}
+                </a>
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm" style={{ height: "380px" }}>
+                <iframe
+                  title="Novves Yalova"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.8!2d29.4048049!3d40.6808946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cae34dfa345cc7:0x688866be4ac613ae!2sNOVVES+ELEKTR%C4%B0K+MOTOR+ANON%C4%B0M+%C5%9E%C4%B0RKET%C4%B0!5e0!3m2!1str!2str!4v1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
