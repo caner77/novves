@@ -10,11 +10,36 @@
     "heroImageAlt": "Aksiyal Jet Fan",
     "heroLabel": "DRAGONFLY Serisi",
     "stats": [
-      { "value": "1.200+", "label": "Ürün Çeşidi" },
-      { "value": "113+", "label": "Tamamlanan Proje" },
-      { "value": "18+", "label": "Ülkeye İhracat" },
-      { "value": "7/24", "label": "Teknik Destek" }
-    ]
+      {
+        "value": "1.200+",
+        "label": "Ürün Çeşidi"
+      },
+      {
+        "value": "113+",
+        "label": "Tamamlanan Proje"
+      },
+      {
+        "value": "18+",
+        "label": "Ülkeye İhracat"
+      },
+      {
+        "value": "7/24",
+        "label": "Teknik Destek"
+      }
+    ],
+    "endCard": {
+      "series": "DRAGONFLY SERİSİ",
+      "title": "Aksiyal Jet Fan",
+      "desc": "EN 12101-3 sertifikalı, F300/2H yangın dayanımlı duman tahliye fanları. CFD destekli tasarım ile maksimum performans.",
+      "spec1Value": "F300",
+      "spec1Label": "Yangın Sınıfı",
+      "spec2Value": "2H",
+      "spec2Label": "Dayanım",
+      "spec3Value": "EN 12101-3",
+      "spec3Label": "Sertifika",
+      "cta": "Ürünü İncele",
+      "scroll": "Scroll"
+    }
   },
   "pillars": [
     {
@@ -22,9 +47,18 @@
       "title": "Analitik Zekanın Dijital İkizi",
       "intro": "Sürecimiz bir ürünle değil, bir problem analiziyle başlar. NOVVES için mühendislik; sadece fan seçmek değil, dumanın ve ısının yapı içindeki yolculuğunu matematiksel olarak öngörmektir.",
       "items": [
-        { "label": "CFD Simülasyonları", "desc": "Yangın senaryolarını dijital ortamda canlandırıyor, sistemin performansını kurulumdan önce kanıtlıyoruz." },
-        { "label": "Hassas Hesaplama", "desc": "Her yapıya özel debi ve basınçlandırma hesapları ile \"ayrı mühendislik\" maliyetlerinden kaçınıyor, optimum verimi yakalıyoruz." },
-        { "label": "Proje Odaklılık", "desc": "Standart çözümlere sığmıyor; mimari estetiği bozmuyor, teknik şartnamelere tam uyumlu özel sistemler tasarlıyoruz." }
+        {
+          "label": "CFD Simülasyonları",
+          "desc": "Yangın senaryolarını dijital ortamda canlandırıyor, sistemin performansını kurulumdan önce kanıtlıyoruz."
+        },
+        {
+          "label": "Hassas Hesaplama",
+          "desc": "Her yapıya özel debi ve basınçlandırma hesapları ile \"ayrı mühendislik\" maliyetlerinden kaçınıyor, optimum verimi yakalıyoruz."
+        },
+        {
+          "label": "Proje Odaklılık",
+          "desc": "Standart çözümlere sığmıyor; mimari estetiği bozmuyor, teknik şartnamelere tam uyumlu özel sistemler tasarlıyoruz."
+        }
       ]
     },
     {
@@ -32,9 +66,18 @@
       "title": "Standartların Ötesinde Bir Zanaat",
       "intro": "Tasarım aşamasında onaylanan her veri, üretim tesislerimizde fiziksel bir güce dönüşür. Mühendislik ekosistemini modern üretim teknolojileriyle birleştirerek hata payını sıfıra indiriyoruz.",
       "items": [
-        { "label": "Sertifikalı Güç", "desc": "Ürettiğimiz her fan ve damper, EN 12101-3 gibi uluslararası yangın dayanım standartlarında, akredite laboratuvarlarca test edilmektedir." },
-        { "label": "Hassas İmalat", "desc": "Lazer kesimden dinamik balans testlerine kadar her aşamada milimetrik toleranslarla çalışıyoruz." },
-        { "label": "Sürdürülebilir Malzeme", "desc": "Uzun ömürlü, korozyona dayanıklı ve enerji verimliliği yüksek ham maddelerle sistemin yaşam döngüsünü maksimize ediyoruz." }
+        {
+          "label": "Sertifikalı Güç",
+          "desc": "Ürettiğimiz her fan ve damper, EN 12101-3 gibi uluslararası yangın dayanım standartlarında, akredite laboratuvarlarca test edilmektedir."
+        },
+        {
+          "label": "Hassas İmalat",
+          "desc": "Lazer kesimden dinamik balans testlerine kadar her aşamada milimetrik toleranslarla çalışıyoruz."
+        },
+        {
+          "label": "Sürdürülebilir Malzeme",
+          "desc": "Uzun ömürlü, korozyona dayanıklı ve enerji verimliliği yüksek ham maddelerle sistemin yaşam döngüsünü maksimize ediyoruz."
+        }
       ]
     },
     {
@@ -42,9 +85,18 @@
       "title": "Sahada Kusursuz Performans",
       "intro": "En iyi ürün, ancak en iyi şekilde entegre edildiğinde hayat kurtarır. İnovasyonumuzun son halkası, sistemin binanın sinir sistemiyle kusursuz bir uyum içinde çalışmasıdır.",
       "items": [
-        { "label": "Saha Süpervizorlüğü", "desc": "Montaj aşamasında teknik rehberlik sunarak sistemin projedeki gibi doğru konumlanmasını sağlıyoruz." },
-        { "label": "Devreye Alma", "desc": "Soğuk ve sıcak duman testleri ile sistemin tepki süresini ve tahliye kapasitesini sahada doğruluyoruz." },
-        { "label": "Akıllı Otomasyon Entegrasyonu", "desc": "Yangın algılama sistemleriyle jet fan ve damperlerin milisaniyeler içinde senkronize olmasını garanti altına alıyoruz." }
+        {
+          "label": "Saha Süpervizorlüğü",
+          "desc": "Montaj aşamasında teknik rehberlik sunarak sistemin projedeki gibi doğru konumlanmasını sağlıyoruz."
+        },
+        {
+          "label": "Devreye Alma",
+          "desc": "Soğuk ve sıcak duman testleri ile sistemin tepki süresini ve tahliye kapasitesini sahada doğruluyoruz."
+        },
+        {
+          "label": "Akıllı Otomasyon Entegrasyonu",
+          "desc": "Yangın algılama sistemleriyle jet fan ve damperlerin milisaniyeler içinde senkronize olmasını garanti altına alıyoruz."
+        }
       ]
     }
   ],
@@ -59,15 +111,33 @@
     "desc": "Endüstriyel ve konfor havalandırma ihtiyaçlarınız için kapsamlı ürün portföyü.",
     "imagePlaceholder": "Görsel",
     "items": [
-      { "label": "Hava Hareketi" },
-      { "label": "İklimlendirme" },
-      { "label": "Soğutma ve Isıtma" },
-      { "label": "Hava Yönetimi" },
-      { "label": "Hava Dağıtımı" },
-      { "label": "Hava Filtrasyonu" },
-      { "label": "Aksesuarlar" },
-      { "label": "Otomasyon Malzemeleri" },
-      { "label": "Titreşim ve Ses İzolasyon" }
+      {
+        "label": "Hava Hareketi"
+      },
+      {
+        "label": "İklimlendirme"
+      },
+      {
+        "label": "Soğutma ve Isıtma"
+      },
+      {
+        "label": "Hava Yönetimi"
+      },
+      {
+        "label": "Hava Dağıtımı"
+      },
+      {
+        "label": "Hava Filtrasyonu"
+      },
+      {
+        "label": "Aksesuarlar"
+      },
+      {
+        "label": "Otomasyon Malzemeleri"
+      },
+      {
+        "label": "Titreşim ve Ses İzolasyon"
+      }
     ]
   },
   "video": {
@@ -82,10 +152,22 @@
     "tag": "SSS",
     "title": "Sıkça Sorulan Sorular",
     "items": [
-      { "q": "NOVVES hangi sektörlere hizmet veriyor?", "a": "NOVVES, otopark, tünel, AVM, hastane, otel, endüstriyel tesis, sera, enerji santrali ve konut gibi geniş bir yelpazede duman tahliye, konfor havalandırma ve endüstriyel hava yönetimi çözümleri sunmaktadır." },
-      { "q": "Ürünleriniz hangi standartlara uygun?", "a": "Ürünlerimiz EN 12101-3, ISO 9001, ISO 14001, ISO 45001, CE ve ATEX standartlarına uygun olarak üretilmekte ve akredite laboratuvarlarda test edilmektedir." },
-      { "q": "CFD analizi hizmeti veriyor musunuz?", "a": "Evet, her proje özelinde 3D CFD simülasyonu ile duman yayılımı, sıcaklık, CO yoğunluğu ve görüş mesafesi analizi yapıyor, jet fan yerleşimini optimize ediyoruz." },
-      { "q": "Satış sonrası destek sunuyor musunuz?", "a": "Devreye alma, periyodik bakım, yedek parça temini ve 7/24 teknik servis hizmetleri ile satış sonrası tam destek sağlıyoruz." }
+      {
+        "q": "NOVVES hangi sektörlere hizmet veriyor?",
+        "a": "NOVVES, otopark, tünel, AVM, hastane, otel, endüstriyel tesis, sera, enerji santrali ve konut gibi geniş bir yelpazede duman tahliye, konfor havalandırma ve endüstriyel hava yönetimi çözümleri sunmaktadır."
+      },
+      {
+        "q": "Ürünleriniz hangi standartlara uygun?",
+        "a": "Ürünlerimiz EN 12101-3, ISO 9001, ISO 14001, ISO 45001, CE ve ATEX standartlarına uygun olarak üretilmekte ve akredite laboratuvarlarda test edilmektedir."
+      },
+      {
+        "q": "CFD analizi hizmeti veriyor musunuz?",
+        "a": "Evet, her proje özelinde 3D CFD simülasyonu ile duman yayılımı, sıcaklık, CO yoğunluğu ve görüş mesafesi analizi yapıyor, jet fan yerleşimini optimize ediyoruz."
+      },
+      {
+        "q": "Satış sonrası destek sunuyor musunuz?",
+        "a": "Devreye alma, periyodik bakım, yedek parça temini ve 7/24 teknik servis hizmetleri ile satış sonrası tam destek sağlıyoruz."
+      }
     ]
   },
   "social": {

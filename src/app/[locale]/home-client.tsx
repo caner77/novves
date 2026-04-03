@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FanAssemblyAnimation } from "@/components/fan-assembly-animation";
 
 /* ── Types ────────────────────────────────────────────── */
 
@@ -18,6 +19,19 @@ type HomeDict = {
     heroImageAlt: string;
     heroLabel: string;
     stats: { value: string; label: string }[];
+    endCard: {
+      series: string;
+      title: string;
+      desc: string;
+      spec1Value: string;
+      spec1Label: string;
+      spec2Value: string;
+      spec2Label: string;
+      spec3Value: string;
+      spec3Label: string;
+      cta: string;
+      scroll: string;
+    };
   };
   pillars: {
     tag: string;
@@ -82,72 +96,14 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
 
   return (
     <main>
-      {/* ═══ HERO ═══ */}
-      <section className="relative flex min-h-[650px] items-center overflow-hidden bg-dark">
-        <Image src="/images/page-hero/cozumler-main.jpg" alt="" fill className="object-cover opacity-35" sizes="100vw" priority />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/80 to-dark/50" />
+      {/* ═══ HERO — Fan Assembly Animation ═══ */}
+      <FanAssemblyAnimation dict={dict.hero} locale={locale} />
+      {/* Animasyonun tamamlanması için scroll mesafesi */}
+      <div className="h-screen bg-black" />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            {/* Left — Text */}
-            <div>
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-primary">{dict.hero.badge}</span>
-              </div>
-
-              <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
-                {dict.hero.titleLine1}<br />
-                <span className="text-primary">{dict.hero.titleLine2}</span> {dict.hero.titleLine3}
-              </h1>
-
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/55">
-                {dict.hero.subtitle}
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link href={`/${locale}/iletisim`} className="group inline-flex items-center gap-2.5 rounded-xl bg-primary px-8 py-4 text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:bg-[#e55a28] hover:shadow-xl hover:shadow-primary/30">
-                  {dict.hero.ctaPrimary}
-                  <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                </Link>
-                <Link href={`/${locale}/urunler/hava-hareketi`} className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-7 py-4 text-sm font-semibold text-white/80 transition-all duration-300 hover:border-white/30 hover:text-white">
-                  {dict.hero.ctaSecondary}
-                </Link>
-              </div>
-            </div>
-
-            {/* Right — Fan hero */}
-            <div className="relative hidden lg:block">
-              <div className="relative mx-auto h-[600px] w-[600px]">
-                <div className="absolute inset-4 rounded-full border border-dashed border-white/[0.06]" />
-                <div className="absolute inset-16 rounded-full border border-white/[0.04]" />
-                <Image
-                  src="/images/hero/aksiyal-jet-fan.png"
-                  alt={dict.hero.heroImageAlt}
-                  fill
-                  className="object-contain p-8 drop-shadow-2xl"
-                  sizes="450px"
-                />
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2">
-                  <span className="rounded-lg bg-white/[0.06] px-4 py-2 text-xs font-bold text-white/50 ring-1 ring-white/[0.08] backdrop-blur-sm">
-                    {dict.hero.heroLabel}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats strip */}
-          <div className="mt-16 grid grid-cols-2 gap-px rounded-xl bg-white/[0.06] sm:grid-cols-4">
-            {dict.hero.stats.map((s) => (
-              <div key={s.label} className="px-6 py-5 text-center backdrop-blur-sm">
-                <p className="text-xl font-bold text-primary sm:text-2xl">{s.value}</p>
-                <p className="mt-0.5 text-[11px] font-medium uppercase tracking-wider text-white/35">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Sticky hero'nun üzerine çıkması için */}
+      <div className="relative z-10">
+        <div className="h-24 bg-gradient-to-b from-black to-white" />
 
       {/* ═══ PILLARS — 3 Sections ═══ */}
       {dict.pillars.map((pillar, idx) => {
@@ -379,6 +335,7 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
           </div>
         </div>
       </section>
+      </div>{/* relative z-10 wrapper end */}
     </main>
   );
 }

@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 const localeConfig = {
   tr: { label: "Türkçe", flag: "🇹🇷", short: "TR" },
   en: { label: "English", flag: "🇬🇧", short: "EN" },
+  ru: { label: "Русский", flag: "🇷🇺", short: "RU" },
 } as const;
 
 export function LanguageSwitcher({ locale }: { locale: string }) {
@@ -38,12 +39,12 @@ export function LanguageSwitcher({ locale }: { locale: string }) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-1.5 rounded-lg border border-secondary/12 px-3 py-1.5 text-[12px] font-medium text-secondary transition-all duration-150 hover:border-primary/30 hover:text-dark"
+        className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 px-3 py-1.5 text-[12px] font-medium text-white/60 transition-all duration-150 hover:border-white/30 hover:text-white"
       >
         <span className="text-base leading-none">{current.flag}</span>
         <span>{current.short}</span>
         <svg
-          className={`h-3 w-3 text-secondary/30 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-3 w-3 text-white/30 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2.5}

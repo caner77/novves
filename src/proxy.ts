@@ -21,8 +21,9 @@ function isRateLimited(ip: string): boolean {
 
 function getLocale(request: NextRequest): string {
   const acceptLanguage = request.headers.get("accept-language") ?? "";
-  // Simple locale detection: check if accept-language starts with "en"
-  if (acceptLanguage.toLowerCase().startsWith("en")) return "en";
+  const lang = acceptLanguage.toLowerCase();
+  if (lang.startsWith("en")) return "en";
+  if (lang.startsWith("ru")) return "ru";
   return defaultLocale;
 }
 
@@ -55,9 +56,9 @@ export function proxy(request: NextRequest) {
   const cspHeader = [
     `default-src 'self'`,
     `script-src 'self' 'unsafe-inline' 'unsafe-eval'`,
-    `style-src 'self' 'unsafe-inline'`,
+    `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
     `img-src 'self' blob: data: https://i.ytimg.com`,
-    `font-src 'self'`,
+    `font-src 'self' https://fonts.gstatic.com`,
     `object-src 'none'`,
     `base-uri 'self'`,
     `form-action 'self'`,
@@ -81,6 +82,6 @@ export const config = {
      * - favicon.ico, sitemap.xml, robots.txt (metadata files)
      * - public folder assets (images, certificates, etc.)
      */
-    "/((?!_next/static|_next/image|favicon.ico|icon.svg|sitemap.xml|robots.txt|images/|certificate/|kvkk/).*)",
+    "/((?!_next/static|_next/image|favicon.ico|icon.svg|sitemap.xml|robots.txt|images/|certificate/|kvkk/|animation).*)",
   ],
 };

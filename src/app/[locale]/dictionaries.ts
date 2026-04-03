@@ -27,6 +27,19 @@ const dictionaries = {
     const kvkk = (await import("./dictionaries/en/kvkk.json")).default;
     return { common, home, solutions, products, services, technical, corporate, contact, sustainability, kvkk };
   },
+  ru: async () => {
+    const common = (await import("./dictionaries/ru/common.json")).default;
+    const home = (await import("./dictionaries/ru/home.json")).default;
+    const solutions = (await import("./dictionaries/ru/solutions.json")).default;
+    const products = (await import("./dictionaries/ru/products.json")).default;
+    const services = (await import("./dictionaries/ru/services.json")).default;
+    const technical = (await import("./dictionaries/ru/technical.json")).default;
+    const corporate = (await import("./dictionaries/ru/corporate.json")).default;
+    const contact = (await import("./dictionaries/ru/contact.json")).default;
+    const sustainability = (await import("./dictionaries/ru/sustainability.json")).default;
+    const kvkk = (await import("./dictionaries/ru/kvkk.json")).default;
+    return { common, home, solutions, products, services, technical, corporate, contact, sustainability, kvkk };
+  },
 };
 
 export type Locale = keyof typeof dictionaries;
