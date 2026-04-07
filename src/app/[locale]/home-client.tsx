@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FanAssemblyAnimation } from "@/components/fan-assembly-animation";
+import { ScrollVideoSection } from "@/components/scroll-video-section";
 
 /* ── Types ────────────────────────────────────────────── */
 
@@ -105,19 +106,17 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
       <div className="relative z-10">
         <div className="h-24 bg-gradient-to-b from-black to-white" />
 
-      {/* ═══ PILLARS — 3 Sections ═══ */}
-      {dict.pillars.map((pillar, idx) => {
-        const isEven = idx % 2 === 0;
+      {/* ═══ PILLAR 1 — Mühendislik & Tasarım ═══ */}
+      {(() => {
+        const pillar = dict.pillars[0];
         return (
-          <section key={pillar.tag} className={`${isEven ? "bg-white" : "bg-gray-50"} py-24`}>
+          <section key={pillar.tag} className="bg-white py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className={`grid items-center gap-16 lg:grid-cols-2 ${isEven ? "" : "lg:[direction:rtl]"}`}>
-                {/* Text */}
-                <div className={isEven ? "" : "lg:[direction:ltr]"}>
+              <div className="grid items-center gap-16 lg:grid-cols-2">
+                <div>
                   <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-primary">{pillar.tag}</p>
                   <h2 className="mt-2 text-3xl font-bold tracking-tight text-dark sm:text-4xl">{pillar.title}</h2>
                   <p className="mt-5 text-[15px] leading-7 text-secondary/60">{pillar.intro}</p>
-
                   <div className="mt-8 space-y-4">
                     {pillar.items.map((item) => (
                       <div key={item.label} className="flex items-start gap-4">
@@ -134,19 +133,59 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
                     ))}
                   </div>
                 </div>
+                <div className="relative">
+                  <div className="relative mx-auto aspect-square w-full max-w-md">
+                    <div className="absolute inset-6 rounded-full border border-dashed border-gray-200" />
+                    <div className="absolute inset-16 rounded-full border border-gray-100" />
+                    <Image src={pillarImages[0]} alt={pillar.title} fill className="object-contain p-12 drop-shadow-xl" sizes="(max-width: 1024px) 100vw, 50vw" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
-                {/* Image */}
+      {/* ═══ SCROLL VIDEO ANIMATION 2 ═══ */}
+      <ScrollVideoSection
+        framesPath="/animation/frames-2"
+        totalFrames={241}
+        id="animation-2"
+      />
+
+      {/* ═══ PILLARS 2 & 3 — Üretim & Kurulum ═══ */}
+      {dict.pillars.slice(1).map((pillar, i) => {
+        const idx = i + 1;
+        const isEven = idx % 2 === 0;
+        return (
+          <section key={pillar.tag} className={`${isEven ? "bg-white" : "bg-gray-50"} py-24`}>
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className={`grid items-center gap-16 lg:grid-cols-2 ${isEven ? "" : "lg:[direction:rtl]"}`}>
+                <div className={isEven ? "" : "lg:[direction:ltr]"}>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-primary">{pillar.tag}</p>
+                  <h2 className="mt-2 text-3xl font-bold tracking-tight text-dark sm:text-4xl">{pillar.title}</h2>
+                  <p className="mt-5 text-[15px] leading-7 text-secondary/60">{pillar.intro}</p>
+                  <div className="mt-8 space-y-4">
+                    {pillar.items.map((item) => (
+                      <div key={item.label} className="flex items-start gap-4">
+                        <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                          <svg className="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                          </svg>
+                        </span>
+                        <div>
+                          <p className="text-sm font-bold text-dark">{item.label}</p>
+                          <p className="mt-0.5 text-[13px] leading-relaxed text-secondary/55">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 <div className={`relative ${isEven ? "" : "lg:[direction:ltr]"}`}>
                   <div className="relative mx-auto aspect-square w-full max-w-md">
                     <div className="absolute inset-6 rounded-full border border-dashed border-gray-200" />
                     <div className="absolute inset-16 rounded-full border border-gray-100" />
-                    <Image
-                      src={pillarImages[idx]}
-                      alt={pillar.title}
-                      fill
-                      className="object-contain p-12 drop-shadow-xl"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
+                    <Image src={pillarImages[idx]} alt={pillar.title} fill className="object-contain p-12 drop-shadow-xl" sizes="(max-width: 1024px) 100vw, 50vw" />
                   </div>
                 </div>
               </div>
