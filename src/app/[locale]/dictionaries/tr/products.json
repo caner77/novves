@@ -54,7 +54,7 @@
       "havaFiltrasyonu": "Hava Filtrasyonu",
       "aksesuarlar": "Aksesuarlar",
       "otomasyonMalzemeleri": "Otomasyon Malzemeleri",
-      "titresimVeSesIzolasyon": "Titreşim ve Ses İzolasyon"
+      "titresimVeSesIzolasyon": "Titreşim ve Ses İzolasyonu"
     }
   },
   "havaHareketi": {
@@ -93,7 +93,7 @@
       { "label": "Hava Filtrasyonu", "slug": "hava-filtrasyonu" },
       { "label": "Aksesuarlar", "slug": "aksesuarlar" },
       { "label": "Otomasyon Malzemeleri", "slug": "otomasyon-malzemeleri" },
-      { "label": "Titreşim ve Ses İzolasyon", "slug": "titresim-ve-ses-izolasyon" }
+      { "label": "Titreşim ve Ses İzolasyonu", "slug": "titresim-ve-ses-izolasyon" }
     ],
     "ctaDesc": "1.200+ ürün çeşidi arasından projenize en uygun çözümü bulmak için uzman mühendislik ekibimizle iletişime geçin."
   },
@@ -133,7 +133,7 @@
       { "label": "Hava Filtrasyonu", "slug": "hava-filtrasyonu" },
       { "label": "Aksesuarlar", "slug": "aksesuarlar" },
       { "label": "Otomasyon Malzemeleri", "slug": "otomasyon-malzemeleri" },
-      { "label": "Titreşim ve Ses İzolasyon", "slug": "titresim-ve-ses-izolasyon" }
+      { "label": "Titreşim ve Ses İzolasyonu", "slug": "titresim-ve-ses-izolasyon" }
     ]
   },
   "sogutmaVeIsitma": {
@@ -158,7 +158,7 @@
       { "label": "Hava Filtrasyonu", "slug": "hava-filtrasyonu" },
       { "label": "Aksesuarlar", "slug": "aksesuarlar" },
       { "label": "Otomasyon Malzemeleri", "slug": "otomasyon-malzemeleri" },
-      { "label": "Titreşim ve Ses İzolasyon", "slug": "titresim-ve-ses-izolasyon" }
+      { "label": "Titreşim ve Ses İzolasyonu", "slug": "titresim-ve-ses-izolasyon" }
     ]
   },
   "havaYonetimi": {
@@ -179,7 +179,7 @@
       { "label": "Hava Filtrasyonu", "slug": "hava-filtrasyonu" },
       { "label": "Aksesuarlar", "slug": "aksesuarlar" },
       { "label": "Otomasyon Malzemeleri", "slug": "otomasyon-malzemeleri" },
-      { "label": "Titreşim ve Ses İzolasyon", "slug": "titresim-ve-ses-izolasyon" }
+      { "label": "Titreşim ve Ses İzolasyonu", "slug": "titresim-ve-ses-izolasyon" }
     ]
   },
   "havaDagitimi": {
@@ -206,7 +206,7 @@
       { "label": "Hava Filtrasyonu", "slug": "hava-filtrasyonu" },
       { "label": "Aksesuarlar", "slug": "aksesuarlar" },
       { "label": "Otomasyon Malzemeleri", "slug": "otomasyon-malzemeleri" },
-      { "label": "Titreşim ve Ses İzolasyon", "slug": "titresim-ve-ses-izolasyon" }
+      { "label": "Titreşim ve Ses İzolasyonu", "slug": "titresim-ve-ses-izolasyon" }
     ]
   },
   "havaFiltrasyonu": {
@@ -230,7 +230,7 @@
       { "label": "Hava Dağıtımı", "slug": "hava-dagitimi" },
       { "label": "Aksesuarlar", "slug": "aksesuarlar" },
       { "label": "Otomasyon Malzemeleri", "slug": "otomasyon-malzemeleri" },
-      { "label": "Titreşim ve Ses İzolasyon", "slug": "titresim-ve-ses-izolasyon" }
+      { "label": "Titreşim ve Ses İzolasyonu", "slug": "titresim-ve-ses-izolasyon" }
     ]
   },
   "aksesuarlar": {
@@ -280,7 +280,7 @@
       { "label": "Hava Dağıtımı", "slug": "hava-dagitimi" },
       { "label": "Hava Filtrasyonu", "slug": "hava-filtrasyonu" },
       { "label": "Otomasyon Malzemeleri", "slug": "otomasyon-malzemeleri" },
-      { "label": "Titreşim ve Ses İzolasyon", "slug": "titresim-ve-ses-izolasyon" }
+      { "label": "Titreşim ve Ses İzolasyonu", "slug": "titresim-ve-ses-izolasyon" }
     ]
   },
   "otomasyonMalzemeleri": {
@@ -301,11 +301,11 @@
       { "label": "Hava Dağıtımı", "slug": "hava-dagitimi" },
       { "label": "Hava Filtrasyonu", "slug": "hava-filtrasyonu" },
       { "label": "Aksesuarlar", "slug": "aksesuarlar" },
-      { "label": "Titreşim ve Ses İzolasyon", "slug": "titresim-ve-ses-izolasyon" }
+      { "label": "Titreşim ve Ses İzolasyonu", "slug": "titresim-ve-ses-izolasyon" }
     ]
   },
   "titresimVeSesIzolasyon": {
-    "title": "Titreşim ve Ses İzolasyon",
+    "title": "Titreşim ve Ses İzolasyonu",
     "titleFirst": "Titreşim ve Ses",
     "titleHighlight": "İzolasyon",
     "heroDesc": "Susturucu, lastik takoz ve titreşim izolatörleri.",
