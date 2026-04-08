@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   ),
 };
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
   return [{ locale: "tr" }, { locale: "en" }, { locale: "ru" }];
 }

@@ -1,149 +1,200 @@
 {
-  "bizKimiz": {
-    "metaTitle": "Biz Kimiz? | Novves",
-    "metaDescription": "NOVVES, hava hareketini mühendislikle buluşturur. Duman tahliye ve konfor havalandırma alanlarında uçtan uca çözümler.",
-    "breadcrumbHome": "Ana Sayfa",
-    "breadcrumbCorporate": "Kurumsal",
-    "breadcrumbPage": "Biz Kimiz?",
+  "politikamiz": {
     "badge": "Kurumsal",
-    "heroTitle1": "Hava Hareketini",
-    "heroTitleHighlight": "Mühendislikle",
-    "heroTitle2": "Buluşturuyoruz",
-    "heroDesc": "20 yıllık sektör deneyimi ve kendi üretim gücümüzle endüstriyel fan sistemlerinde Türkiye'nin öncü markasıyız.",
-    "stats": [
-      { "value": "1.200+", "label": "Ürün Çeşidi" },
-      { "value": "10+", "label": "Yıllık Tecrübe" },
-      { "value": "50+", "label": "Ülkeye İhracat" },
-      { "value": "7/24", "label": "Teknik Destek" }
+    "introP1": "NOVVES Elektrik Motor A.Ş. olarak, Yalova'daki 3.000 m² üretim tesisimiz ve İstanbul Kozyatağı'ndaki merkez ofisimizle, ulusal ve uluslararası mevzuata tam uyumla faaliyet göstermekteyiz.",
+    "sections": [
+      {
+        "items": [
+          "Doğal kaynakları verimli ve etkin kullanırız.",
+          "Atıkları minimize ederek çevreye zarar vermeden bertaraf ederiz.",
+          "Her türlü kirliliği kaynağında önleyerek çevreyle uyumlu faaliyetler yürütürüz.",
+          "Geri dönüşüm, yeniden kullanım ve diğer atık yönetimi uygulamalarını sürekli geliştiririz.",
+          "Enerji verimliliği ve sürdürülebilir enerji kullanımında öncü olmayı hedefleriz.",
+          "Çalışanlarımıza, gerektiğinde çevreye zarar verebilecek işleri durdurma yetkisi tanırız."
+        ],
+        "title": "Çevre ve Sürdürülebilirlik",
+        "number": "01"
+      },
+      {
+        "items": [
+          "Çevresel ve mesleki riskleri değerlendirerek iş kazalarını önlemeye yönelik sistemler kurarız.",
+          "Tüm ekipmanlarımızda güvenli, sürdürülebilir ve modern teknolojiler kullanırız.",
+          "Meslek hastalıklarını önlemek için eğitim ve koruyucu tedbirleri hayata geçiririz.",
+          "Proaktif yaklaşımı benimseyerek riskleri öngörüp önceden önlem alırız.",
+          "İş sağlığı ve güvenliği performansımızı sürekli gözden geçirir, hedeflerimizi güncelleriz."
+        ],
+        "title": "İş Sağlığı ve Güvenliği",
+        "number": "02"
+      },
+      {
+        "items": [
+          "Tüm çalışanlarımızın bilgi ve yetkinliğini artırmak için düzenli eğitimler düzenleriz.",
+          "Çalışan temsilcilerini karar alma süreçlerine entegre eder, aktif katılımı teşvik ederiz.",
+          "Katılımın önündeki engelleri ortadan kaldırarak kurumsal bağlılığı artırırız."
+        ],
+        "title": "Çalışan Katılımı ve Gelişimi",
+        "number": "03"
+      },
+      {
+        "items": [
+          "İlgili tarafların beklentilerini analiz eder, uygun aksiyonları planlarız.",
+          "Müşteri memnuniyetini beklentinin ötesine taşımayı hedefleriz.",
+          "Entegre Yönetim Sistemi'nin etkinliğini sürekli geliştirir, sistem performansımızı ölçeriz.",
+          "Tedarikçilerimiz ve çalışanlarımızla birlikte sektöre örnek olacak uygulamalara öncülük ederiz."
+        ],
+        "title": "Performans ve Paydaş Odaklılık",
+        "number": "04"
+      }
     ],
-    "introTag": "Kim Olduğumuz",
-    "introTitle1": "NOVVES, hava hareketini",
-    "introTitleHighlight": "mühendislikle",
-    "introTitle2": "buluşturur.",
+    "metaTitle": "Politikamız | Novves",
+    "heroTitle1": "Entegre Yönetim",
+    "introTitle": "Kalite, Çevre ve İş Güvenliği",
+    "introP2Bold": "her zaman en üst seviyede tutmak",
+    "closingQuote": "NOVVES Elektrik Motor A.Ş., sürdürülebilirlik, kalite ve iş güvenliğini bütünsel bir sistem olarak görür; entegre yönetim anlayışını tüm süreçlerine yansıtarak değer üretmeye devam eder.",
+    "introCompany": "NOVVES Elektrik Motor A.Ş.",
+    "introP2After": "öncelikli hedeflerimizdir.",
+    "introP2Before": "Endüstriyel ve konfor amaçlı fan sistemleri üretiminde, kaliteyi sürekli artırmak, yenilikçi çözümler sunmak ve müşteri memnuniyetini",
+    "breadcrumbHome": "Ana Sayfa",
+    "breadcrumbPage": "Politikamız",
+    "metaDescription": "NOVVES Entegre Yönetim Politikası — Çevre, sürdürülebilirlik, iş sağlığı ve güvenliği, kalite yönetimi.",
+    "heroTitleHighlight": "Politikamız",
+    "breadcrumbCorporate": "Kurumsal"
+  },
+  "bizKimiz": {
+    "badge": "Kurumsal",
+    "stats": [
+      {
+        "label": "Ürün Çeşidi",
+        "value": "1.200+"
+      },
+      {
+        "label": "Yıllık Tecrübe",
+        "value": "10+"
+      },
+      {
+        "label": "Ülkeye İhracat",
+        "value": "50+"
+      },
+      {
+        "label": "Teknik Destek",
+        "value": "7/24"
+      }
+    ],
+    "whyTag": "Fark",
+    "ctaDesc": "Projeniz için doğru havalandırma çözümünü birlikte belirleyelim. Uzman mühendis ekibimiz size en kısa sürede dönüş yapar.",
     "introP1": "Kurucularımız Zeki Kadir Özüntürk ve Erdal Özüntürk'ün 20 yıllık sektör tecrübesiyle kurulan NOVVES; duman tahliye ve konfor havalandırma alanlarında üretimden projelendirmeye, mühendislikten devreye almaya kadar geniş bir yelpazede hizmet sunmaktadır.",
     "introP2": "Yalova'daki fabrikamızda gerçekleştirdiğimiz yerli üretim ile Türkiye'den 50'den fazla ülkeye ihracat yapıyoruz. Her ürün, uluslararası test standartlarını karşılamak üzere tasarlanır ve belgelendirilir.",
-    "contactUs": "Bizimle İletişime Geçin",
-    "ourCertificates": "Sertifikalarımız",
+    "reasons": [
+      {
+        "desc": "Kendi tesisimizde gerçekleştirdiğimiz üretim süreçleriyle kalite standartlarını eksiksiz karşılıyoruz.",
+        "title": "%100 Mühendislik ve Üretim Gücü"
+      },
+      {
+        "desc": "Her projenin kendine özgü gereksinimleri olduğunu bilerek, standart dışı mühendislik çözümleri üretiyoruz.",
+        "title": "Projeye Özel Çözüm Yaklaşımı"
+      },
+      {
+        "desc": "CE belgeli ürünlerimiz ve ISO sertifikalarımız ile global pazarda güvenle rekabet ediyoruz.",
+        "title": "Uluslararası Standartlara Uyum"
+      },
+      {
+        "desc": "Sürdürülebilirliği ön planda tutarak düşük enerji tüketimli, yüksek performanslı sistemler geliştiriyoruz.",
+        "title": "Ar-Ge ve Enerji Verimliliği"
+      },
+      {
+        "desc": "Satış sonrası teknik servis ve danışmanlık hizmetlerimizle iş ortaklarımızın yanında olmaya devam ediyoruz.",
+        "title": "Uzun Vadeli İş Ortaklığı"
+      }
+    ],
     "teamAlt": "Novves Ekibi",
-    "foundedYear": "2014",
-    "foundedLabel": "Kuruluş Yılı",
-    "approachTag": "Yaklaşımımız",
-    "approachTitle1": "Sadece ürün değil,",
-    "approachTitleHighlight": "çözüm üretiriz.",
+    "whyDesc": "Bizi rakiplerimizden ayıran temel değerlerimiz ve taahhütlerimiz.",
+    "areasTag": "Faaliyet Alanları",
+    "ctaTitle": "Birlikte Çalışmaya Hazır Mısınız?",
+    "heroDesc": "20 yıllık sektör deneyimi ve kendi üretim gücümüzle endüstriyel fan sistemlerinde Türkiye'nin öncü markasıyız.",
+    "introTag": "Kim Olduğumuz",
+    "whyTitle": "Neden",
+    "areasDesc": "İki temel mühendislik disiplininde Türkiye'nin önde gelen çözüm ortağıyız.",
+    "contactUs": "Bizimle İletişime Geçin",
+    "metaTitle": "Biz Kimiz? | Novves",
+    "smokeDesc": "Yangın anında ilk tehdit alev değil, dumandır. NOVVES, otoparklar ve kapalı alanlar için geliştirdiği jet fan sistemleriyle dumanı hızlı ve kontrollü biçimde tahliye eder. CFD analizleri, duman kontrol projelendirmesi ve uygulama desteğiyle güvenli tahliyeyi mümkün kılar.",
     "approachP1": "NOVVES, geliştirdiği fan sistemlerini yalnızca satışa sunmakla kalmaz; aynı zamanda bu sistemleri anahtar teslim projeler kapsamında uçtan uca bir hizmet olarak sağlar.",
     "approachP2": "Türkiye başta olmak üzere çevre coğrafyalarda çok sayıda başarılı projeye imza atan firmamız, proje özelinde mühendislik, CFD analizleri, test ve saha devreye alma hizmetleriyle iş ortaklarına bütünsel destek sunar.",
+    "areasTitle": "Uzmanlık Alanlarımız",
+    "ctaContact": "Bizimle İletişime Geçin",
     "factoryAlt": "Novves Fabrika",
+    "heroTitle1": "Hava Hareketini",
+    "heroTitle2": "Buluşturuyoruz",
+    "smokeTitle": "Duman & Isı Tahliye Sistemleri",
+    "approachTag": "Yaklaşımımız",
+    "comfortDesc": "Modern yaşamın büyük bölümü kapalı alanlarda geçiyor. NOVVES, iç hava kalitesini artırmaya odaklı sistemleriyle binalarda taze hava sirkülasyonunu sağlayarak sağlıklı ve yaşanabilir ortamlar yaratır. Geniş ürün gamımız ve mühendislik desteğimizle her türlü konfor havalandırma ihtiyacına özel çözümler sunuyoruz.",
+    "ctaProducts": "Ürünlerimizi Keşfedin",
+    "foundedYear": "2014",
+    "introTitle1": "NOVVES, hava hareketini",
+    "introTitle2": "buluşturur.",
+    "comfortTitle": "Konfor Havalandırma",
+    "foundedLabel": "Kuruluş Yılı",
+    "approachTitle1": "Sadece ürün değil,",
+    "breadcrumbHome": "Ana Sayfa",
+    "breadcrumbPage": "Biz Kimiz?",
+    "metaDescription": "NOVVES, hava hareketini mühendislikle buluşturur. Duman tahliye ve konfor havalandırma alanlarında uçtan uca çözümler.",
+    "ourCertificates": "Sertifikalarımız",
     "bulletHighlights": [
       "CFD (Hesaplamalı Akışkanlar Dinamiği) Analizi",
       "Anahtar Teslim Proje Yönetimi",
       "Saha Devreye Alma ve Teknik Servis",
       "Duman Kontrol Sistem Tasarımı"
     ],
-    "areasTag": "Faaliyet Alanları",
-    "areasTitle": "Uzmanlık Alanlarımız",
-    "areasDesc": "İki temel mühendislik disiplininde Türkiye'nin önde gelen çözüm ortağıyız.",
-    "comfortTitle": "Konfor Havalandırma",
-    "comfortDesc": "Modern yaşamın büyük bölümü kapalı alanlarda geçiyor. NOVVES, iç hava kalitesini artırmaya odaklı sistemleriyle binalarda taze hava sirkülasyonunu sağlayarak sağlıklı ve yaşanabilir ortamlar yaratır. Geniş ürün gamımız ve mühendislik desteğimizle her türlü konfor havalandırma ihtiyacına özel çözümler sunuyoruz.",
     "discoverProducts": "Ürünlerimizi Keşfedin",
-    "smokeTitle": "Duman & Isı Tahliye Sistemleri",
-    "smokeDesc": "Yangın anında ilk tehdit alev değil, dumandır. NOVVES, otoparklar ve kapalı alanlar için geliştirdiği jet fan sistemleriyle dumanı hızlı ve kontrollü biçimde tahliye eder. CFD analizleri, duman kontrol projelendirmesi ve uygulama desteğiyle güvenli tahliyeyi mümkün kılar.",
-    "smokeControlServices": "Duman Kontrol Hizmetleri",
-    "whyTag": "Fark",
-    "whyTitle": "Neden",
-    "whyDesc": "Bizi rakiplerimizden ayıran temel değerlerimiz ve taahhütlerimiz.",
-    "reasons": [
-      {
-        "title": "%100 Mühendislik ve Üretim Gücü",
-        "desc": "Kendi tesisimizde gerçekleştirdiğimiz üretim süreçleriyle kalite standartlarını eksiksiz karşılıyoruz."
-      },
-      {
-        "title": "Projeye Özel Çözüm Yaklaşımı",
-        "desc": "Her projenin kendine özgü gereksinimleri olduğunu bilerek, standart dışı mühendislik çözümleri üretiyoruz."
-      },
-      {
-        "title": "Uluslararası Standartlara Uyum",
-        "desc": "CE belgeli ürünlerimiz ve ISO sertifikalarımız ile global pazarda güvenle rekabet ediyoruz."
-      },
-      {
-        "title": "Ar-Ge ve Enerji Verimliliği",
-        "desc": "Sürdürülebilirliği ön planda tutarak düşük enerji tüketimli, yüksek performanslı sistemler geliştiriyoruz."
-      },
-      {
-        "title": "Uzun Vadeli İş Ortaklığı",
-        "desc": "Satış sonrası teknik servis ve danışmanlık hizmetlerimizle iş ortaklarımızın yanında olmaya devam ediyoruz."
-      }
-    ],
-    "ctaTitle": "Birlikte Çalışmaya Hazır Mısınız?",
-    "ctaDesc": "Projeniz için doğru havalandırma çözümünü birlikte belirleyelim. Uzman mühendis ekibimiz size en kısa sürede dönüş yapar.",
-    "ctaContact": "Bizimle İletişime Geçin",
-    "ctaProducts": "Ürünlerimizi Keşfedin"
-  },
-  "ceoMesaji": {
-    "metaTitle": "CEO'nun Mesajı | Novves",
-    "metaDescription": "Novves Yönetim Kurulu Başkanı ve Genel Müdür Zeki Kadir Özüntürk'ün mesajı.",
-    "breadcrumbHome": "Ana Sayfa",
+    "heroTitleHighlight": "Mühendislikle",
     "breadcrumbCorporate": "Kurumsal",
-    "breadcrumbPage": "CEO'nun Mesajı",
-    "badge": "Kurumsal",
-    "heroTitle1": "CEO'nun",
-    "heroTitleHighlight": "Mesajı",
-    "heroDesc": "Zeki Kadir Özüntürk'ün vizyonu ve NOVVES'in hikâyesi.",
-    "ceoTitle": "Yönetim Kurulu Başkanı & Genel Müdür",
-    "highlights": [
-      { "value": "1.200+", "label": "Ürün Çeşidi" },
-      { "value": "50+", "label": "Ülkeye İhracat" },
-      { "value": "10+", "label": "Yıllık Tecrübe" }
-    ],
-    "greeting": "Değerli Ziyaretçimiz,",
-    "messageP1": "NOVVES ailesine hoş geldiniz, sizi burada görmekten mutluluk duyuyoruz.",
-    "messageP2": "Kuruluşumuzdan bu yana endüstriyel ve konfor havalandırması alanında; özellikle otopark, tesisler ve bina sistemlerinde yenilikçi jet fan ve duman tahliye çözümleri geliştiriyoruz. Her projede insanların güvenliğini ve konforunu ön plana alarak mühendislik disiplinini en üst seviyede uyguluyoruz.",
-    "messageP3": "ArGe odaklı yaklaşımımız ve güçlü üretim altyapımız sayesinde; proje analizi, CFD simülasyonları, test ve devreye alma süreçlerini eksiksiz bir şekilde yürütüyor, ürünlerimizin güvenlik, performans ve çevresel sürdürülebilirlik hedeflerine titizlikle ulaşmasını sağlıyoruz.",
-    "messageP4": "Kardeşim Erdal Özüntürk'le birlikte inşa ettiğimiz bu firmada, bugün 1.200'ü aşkın ürün yelpazesiyle her projeye özel uzman çözümler sunmaktayız. Türkiye'nin dört bir yanında ve 50'yi aşkın ülkede gerçekleştirdiğimiz projeler, kalitemizin ve güvenilirliğimizin en güçlü kanıtıdır.",
-    "pullQuote": "Bizim için kalite bir tesadüf değil, sistematik bir sürecin doğal sonucudur.",
-    "messageP5": "Gelecekte de teknolojiye, iş güvenliğine ve çevreye duyarlı üretim anlayışımızla, global pazarda liderliğimizi daha da güçlendirmeyi hedefliyoruz. Sürdürülebilir enerji verimliliği, dijital mühendislik araçları ve genişleyen ihracat ağımızla NOVVES'i dünya markası hâline getirme yolculuğumuz kararlılıkla devam etmektedir.",
-    "messageP6": "Web sitemiz üzerinden ürünlerimizi detaylı şekilde inceleyebilir, projeleriniz için teknik destek taleplerini kolayca iletebilirsiniz. Ekibimiz sizinle çalışmaktan her zaman mutluluk duyacaktır.",
-    "signOff": "İlginiz ve güveniniz için teşekkür ederiz.",
-    "linkWhoWeAre": "Biz Kimiz?",
-    "linkTeam": "Ekibimiz",
-    "linkContact": "İletişime Geçin"
+    "introTitleHighlight": "mühendislikle",
+    "smokeControlServices": "Duman Kontrol Hizmetleri",
+    "approachTitleHighlight": "çözüm üretiriz."
   },
   "ekibimiz": {
-    "metaTitle": "Ekibimiz | Novves",
-    "metaDescription": "Dinamik NOVVES Ekibi, hayat kurtaran sistemler, nefes aldıran çözümler ve güven veren mühendislik sunar.",
-    "breadcrumbHome": "Ana Sayfa",
-    "breadcrumbCorporate": "Kurumsal",
-    "breadcrumbPage": "Ekibimiz",
     "badge": "Kurumsal",
-    "heroTitle1": "NOVVES",
-    "heroTitleHighlight": "Ekibi",
-    "heroDesc": "Dinamik NOVVES Ekibi, sadece fan üretmez. Hayat kurtaran sistemler, nefes aldıran çözümler ve güven veren mühendislik sunar.",
     "stats": [
-      { "value": "2", "label": "Kurucu Ortak" },
-      { "value": "11", "label": "Uzman Ekip Üyesi" },
-      { "value": "10+", "label": "Yıllık Deneyim" },
-      { "value": "3", "label": "Operasyon Birimi" }
+      {
+        "label": "Kurucu Ortak",
+        "value": "2"
+      },
+      {
+        "label": "Uzman Ekip Üyesi",
+        "value": "11"
+      },
+      {
+        "label": "Yıllık Deneyim",
+        "value": "10+"
+      },
+      {
+        "label": "Operasyon Birimi",
+        "value": "3"
+      }
     ],
-    "leadershipTag": "Yönetim Kadrosu",
-    "leadershipTitle": "Liderlik",
+    "ctaTag": "Ekibimize Katılın",
+    "ctaDesc": "NOVVES ailesinin bir parçası olmak ve profesyonel kariyerinize yeni bir yön vermek ister misiniz?",
+    "teamTag": "Profesyonel Kadro",
+    "ctaTitle": "Birlikte daha güçlüyüz",
+    "heroDesc": "Dinamik NOVVES Ekibi, sadece fan üretmez. Hayat kurtaran sistemler, nefes aldıran çözümler ve güven veren mühendislik sunar.",
+    "metaTitle": "Ekibimiz | Novves",
+    "teamTitle": "Takımımız",
+    "ctaContact": "Bize Ulaşın",
+    "heroTitle1": "NOVVES",
     "leadership": [
       {
         "name": "Zeki Kadir ÖZÜNTÜRK",
-        "title": "Yönetim Kurulu Başkanı, Genel Müdür CEO",
         "email": "zeki@novves.com",
-        "image": "/images/zeki-kadir-ozunturk.jpg"
+        "image": "/images/zeki-kadir-ozunturk.jpg",
+        "title": "Yönetim Kurulu Başkanı, Genel Müdür CEO"
       },
       {
         "name": "Erdal ÖZÜNTÜRK",
-        "title": "Yönetim Kurulu Üyesi, Genel Müdür Yardımcısı COO",
         "email": "erdal@novves.com",
-        "image": "/images/team/erdal-ozunturk.jpg"
+        "image": "/images/team/erdal-ozunturk.jpg",
+        "title": "Yönetim Kurulu Üyesi, Genel Müdür Yardımcısı COO"
       }
     ],
-    "teamTag": "Profesyonel Kadro",
-    "teamTitle": "Takımımız",
-    "personSuffix": "kişi",
-    "emailAriaLabel": "e-posta",
-    "phoneAriaLabel": "telefon",
+    "ctaWhoWeAre": "Biz Kimiz?",
     "departments": [
       {
         "tag": "YÖNETİM",
@@ -151,21 +202,21 @@
         "members": [
           {
             "name": "Aykut GÜVEN",
-            "title": "Fabrika Müdürü",
             "email": "aykut.guven@novves.com",
-            "image": "/images/team/aykut-guven.jpg"
+            "image": "/images/team/aykut-guven.jpg",
+            "title": "Fabrika Müdürü"
           },
           {
             "name": "Özün AKGÜL",
-            "title": "Satın Alma",
             "email": "ozun.akgul@novves.com",
-            "image": "/images/team/ozgun-akgul.jpg"
+            "image": "/images/team/ozgun-akgul.jpg",
+            "title": "Satın Alma"
           },
           {
             "name": "Osman Behlül FİDAN",
-            "title": "İnsan Kaynakları",
             "email": "behlul.fidan@novves.com",
-            "image": "/images/team/behlul-fidan.jpg"
+            "image": "/images/team/behlul-fidan.jpg",
+            "title": "İnsan Kaynakları"
           }
         ]
       },
@@ -175,24 +226,24 @@
         "members": [
           {
             "name": "İlker GÜL",
-            "title": "Satış Temsilcisi",
             "email": "ilker.gul@novves.com",
+            "image": "/images/team/ilker-gul.jpg",
             "phone": "+90 546 902 42 85",
-            "image": "/images/team/ilker-gul.jpg"
+            "title": "Satış Temsilcisi"
           },
           {
             "name": "Kübra ÇAĞDAŞ SOYARIK",
-            "title": "Satış Temsilcisi",
             "email": "kubra.soyarik@novves.com",
+            "image": "/images/team/kubra-cagdas.jpg",
             "phone": "+90 549 660 88 37",
-            "image": "/images/team/kubra-cagdas.jpg"
+            "title": "Satış Temsilcisi"
           },
           {
             "name": "Burcu POŞPOŞ",
-            "title": "Satış Temsilcisi",
             "email": "burcu.pospos@novves.com",
+            "image": "/images/team/burcu-pospos.jpg",
             "phone": "+90 541 276 38 34",
-            "image": "/images/team/burcu-pospos.jpg"
+            "title": "Satış Temsilcisi"
           }
         ]
       },
@@ -202,200 +253,225 @@
         "members": [
           {
             "name": "Elif MUTLU",
-            "title": "Üretim Operasyon",
             "email": "elif.mutlu@novves.com",
-            "image": "/images/team/elif-mutlu.jpg"
+            "image": "/images/team/elif-mutlu.jpg",
+            "title": "Üretim Operasyon"
           },
           {
             "name": "Mert Can UZUN",
-            "title": "Üretim Operasyon",
             "email": "mertcan.uzun@novves.com",
-            "image": "/images/team/mert-can-uzun.jpg"
+            "image": "/images/team/mert-can-uzun.jpg",
+            "title": "Üretim Operasyon"
           }
         ]
       }
     ],
-    "ctaTag": "Ekibimize Katılın",
-    "ctaTitle": "Birlikte daha güçlüyüz",
-    "ctaDesc": "NOVVES ailesinin bir parçası olmak ve profesyonel kariyerinize yeni bir yön vermek ister misiniz?",
-    "ctaContact": "Bize Ulaşın",
-    "ctaWhoWeAre": "Biz Kimiz?"
+    "personSuffix": "kişi",
+    "leadershipTag": "Yönetim Kadrosu",
+    "breadcrumbHome": "Ana Sayfa",
+    "breadcrumbPage": "Ekibimiz",
+    "emailAriaLabel": "e-posta",
+    "phoneAriaLabel": "telefon",
+    "leadershipTitle": "Liderlik",
+    "metaDescription": "Dinamik NOVVES Ekibi, hayat kurtaran sistemler, nefes aldıran çözümler ve güven veren mühendislik sunar.",
+    "heroTitleHighlight": "Ekibi",
+    "breadcrumbCorporate": "Kurumsal"
   },
   "referanslar": {
-    "metaTitle": "Referanslar | Novves",
-    "metaDescription": "NOVVES'in Türkiye ve dünya genelinde tamamladığı 113+ proje referansı.",
-    "breadcrumbHome": "Ana Sayfa",
-    "breadcrumbCorporate": "Kurumsal",
-    "breadcrumbPage": "Referanslar",
     "badge": "Kurumsal",
-    "heroTitle1": "Proje",
-    "heroTitleHighlight": "Referanslarımız",
-    "heroDesc": "Türkiye ve dünya genelinde tamamladığımız projeler.",
-    "completedProjects": "Tamamlanan Proje",
-    "country": "Ülke",
-    "projectPeriod": "Proje Dönemi",
-    "searchPlaceholder": "Proje, ülke veya ürün ara...",
-    "allCountries": "Tüm Ülkeler",
-    "allClasses": "Tüm Sınıflar",
-    "gridViewLabel": "Grid görünümü",
-    "countryViewLabel": "Ülke görünümü",
     "clear": "Temizle",
+    "country": "Ülke",
     "project": "proje",
-    "noResults": "Sonuç bulunamadı.",
-    "noResultsHint": "Filtrelerinizi değiştirerek tekrar deneyin.",
+    "heroDesc": "Türkiye ve dünya genelinde tamamladığımız projeler.",
     "showMore": "Daha Fazla Göster",
+    "metaTitle": "Referanslar | Novves",
+    "noResults": "Sonuç bulunamadı.",
+    "allClasses": "Tüm Sınıflar",
+    "heroTitle1": "Proje",
     "viewDetails": "Detayları Gör",
-    "usedProducts": "Kullanılan Ürünler"
+    "allCountries": "Tüm Ülkeler",
+    "usedProducts": "Kullanılan Ürünler",
+    "gridViewLabel": "Grid görünümü",
+    "noResultsHint": "Filtrelerinizi değiştirerek tekrar deneyin.",
+    "projectPeriod": "Proje Dönemi",
+    "breadcrumbHome": "Ana Sayfa",
+    "breadcrumbPage": "Referanslar",
+    "metaDescription": "NOVVES'in Türkiye ve dünya genelinde tamamladığı 113+ proje referansı.",
+    "countryViewLabel": "Ülke görünümü",
+    "completedProjects": "Tamamlanan Proje",
+    "searchPlaceholder": "Proje, ülke veya ürün ara...",
+    "heroTitleHighlight": "Referanslarımız",
+    "breadcrumbCorporate": "Kurumsal"
   },
   "sertifikalar": {
-    "metaTitle": "Sertifikalar | Novves",
-    "metaDescription": "NOVVES'in sahip olduğu ulusal ve uluslararası sertifikalar, CE belgeleri, ISO standartları ve ATEX sertifikaları.",
-    "breadcrumbHome": "Ana Sayfa",
-    "breadcrumbCorporate": "Kurumsal",
-    "breadcrumbPage": "Sertifikalar",
     "badge": "Kurumsal",
-    "heroTitle1": "Sertifika &",
-    "heroTitleHighlight": "Belgeler",
-    "heroDesc": "Ulusal ve uluslararası standartlara uygunluğumuzu belgeleyen sertifikalarımız, kalite taahhüdümüzün somut kanıtıdır.",
-    "accreditationLabel": "Akreditasyon & Standartlar",
-    "statsItems": [
-      { "value": "17+", "label": "Sertifika" },
-      { "value": "ISO", "label": "Sistem Belgeleri" },
-      { "value": "ATEX", "label": "Ex-Proof Onaylı" },
-      { "value": "CE", "label": "EN 12101-3 Uyumlu" }
-    ],
-    "documentSuffix": "belge",
-    "downloadPdf": "PDF İndir",
+    "ctaTag": "Kalite Taahhüdü",
     "groups": [
       {
-        "title": "Hizmet Yeterlilik Belgesi",
         "items": [
-          { "name": "TSE Hizmet Yeterlilik Belgesi", "code": "TSE-HYB", "pdf": "/certificate/tse-novves-hizmet-yeterlilik-belgesi.pdf" }
-        ]
+          {
+            "pdf": "/certificate/tse-novves-hizmet-yeterlilik-belgesi.pdf",
+            "code": "TSE-HYB",
+            "name": "TSE Hizmet Yeterlilik Belgesi"
+          }
+        ],
+        "title": "Hizmet Yeterlilik Belgesi"
       },
       {
-        "title": "Ürün Uygunluk Belgeleri",
         "items": [
-          { "name": "Banyo Fanları", "code": "TS EN 60355-2", "pdf": "/certificate/ts60355-2.pdf" },
-          { "name": "TSE K 453 Sertifikası", "code": "TSE K 453", "pdf": "/certificate/tse-k-453.PDF" },
-          { "name": "Isı Geri Kazanım", "code": "TSE K 381", "pdf": "/certificate/tse-k-381.PDF" },
-          { "name": "Sığınak Fanı", "code": "TSE K 196", "pdf": "/certificate/tse-k-196.PDF" },
-          { "name": "TRM Integra Belgesi", "code": "CE", "pdf": "/certificate/CE-sertifikasi.pdf" }
-        ]
+          {
+            "pdf": "/certificate/ts60355-2.pdf",
+            "code": "TS EN 60355-2",
+            "name": "Banyo Fanları"
+          },
+          {
+            "pdf": "/certificate/tse-k-453.PDF",
+            "code": "TSE K 453",
+            "name": "TSE K 453 Sertifikası"
+          },
+          {
+            "pdf": "/certificate/tse-k-381.PDF",
+            "code": "TSE K 381",
+            "name": "Isı Geri Kazanım"
+          },
+          {
+            "pdf": "/certificate/tse-k-196.PDF",
+            "code": "TSE K 196",
+            "name": "Sığınak Fanı"
+          },
+          {
+            "pdf": "/certificate/CE-sertifikasi.pdf",
+            "code": "CE",
+            "name": "TRM Integra Belgesi"
+          }
+        ],
+        "title": "Ürün Uygunluk Belgeleri"
       },
       {
-        "title": "Sistem Belgeleri",
         "items": [
-          { "name": "Kalite Yönetim Sistemleri", "code": "ISO 9001", "pdf": "/certificate/iso-9001.pdf" },
-          { "name": "İş Sağlığı ve Güvenliği", "code": "ISO 45001", "pdf": "/certificate/iso-45001.pdf" },
-          { "name": "Çevre Yönetim Sistemi", "code": "ISO 14001", "pdf": "/certificate/iso-14001.pdf" },
-          { "name": "Bilgi Güvenliği Yönetim Sistemi", "code": "ISO/IEC 27001:2022", "pdf": "/certificate/bilgi-guvenligi-yonetim-sistemi-ISO-IEC-27001-BQS-2025.pdf" }
-        ]
+          {
+            "pdf": "/certificate/iso-9001.pdf",
+            "code": "ISO 9001",
+            "name": "Kalite Yönetim Sistemleri"
+          },
+          {
+            "pdf": "/certificate/iso-45001.pdf",
+            "code": "ISO 45001",
+            "name": "İş Sağlığı ve Güvenliği"
+          },
+          {
+            "pdf": "/certificate/iso-14001.pdf",
+            "code": "ISO 14001",
+            "name": "Çevre Yönetim Sistemi"
+          },
+          {
+            "pdf": "/certificate/bilgi-guvenligi-yonetim-sistemi-ISO-IEC-27001-BQS-2025.pdf",
+            "code": "ISO/IEC 27001:2022",
+            "name": "Bilgi Güvenliği Yönetim Sistemi"
+          }
+        ],
+        "title": "Sistem Belgeleri"
       },
       {
-        "title": "Kar Yükü Testi Kontrol Raporu",
         "items": [
-          { "name": "Kar Yükü Testi Kontrol Raporu", "code": "EN 12101-3 Annex E", "pdf": "/certificate/kar-yuku-testi.pdf" }
-        ]
+          {
+            "pdf": "/certificate/kar-yuku-testi.pdf",
+            "code": "EN 12101-3 Annex E",
+            "name": "Kar Yükü Testi Kontrol Raporu"
+          }
+        ],
+        "title": "Kar Yükü Testi Kontrol Raporu"
       },
       {
-        "title": "ATEX Belgeleri",
         "items": [
-          { "name": "Aksiyal Fanlar Ex-Proof Sertifikası", "code": "ATEX", "pdf": "/certificate/aksiyal-exproof.pdf" },
-          { "name": "Radyal Fanlar Ex-Proof Sertifikası", "code": "ATEX", "pdf": "/certificate/radyal-exproof.pdf" }
-        ]
+          {
+            "pdf": "/certificate/aksiyal-exproof.pdf",
+            "code": "ATEX",
+            "name": "Aksiyal Fanlar Ex-Proof Sertifikası"
+          },
+          {
+            "pdf": "/certificate/radyal-exproof.pdf",
+            "code": "ATEX",
+            "name": "Radyal Fanlar Ex-Proof Sertifikası"
+          }
+        ],
+        "title": "ATEX Belgeleri"
       },
       {
-        "title": "CE (EN 12101-3) Belgeleri",
         "items": [
-          { "name": "Radial Jet Fan F300/2H CE Belgesi", "code": "RA", "description": "WAT Motor / WEG Motor", "pdf": "/certificate/RA-F300-WEG.pdf" },
-          { "name": "Axial Jet Fan F300/2H CE Belgesi", "code": "JA", "description": "WAT Motor / WEG Motor", "pdf": "/certificate/JA-F300-WEG.pdf" },
-          { "name": "Cowled Axial Fan F300/2H CE Belgesi", "code": "TAA", "description": "WAT Motor / WEG Motor", "pdf": "/certificate/TAA-F300-WEG.pdf" },
-          { "name": "Roof & Cellular Axial Fans F300/2H CE Belgesi", "code": "RAA-CAA", "description": "WAT Motor / WEG Motor", "pdf": "/certificate/RAA-CAA-F300-WEG.pdf" }
-        ]
+          {
+            "pdf": "/certificate/RA-F300-WEG.pdf",
+            "code": "RA",
+            "name": "Radial Jet Fan F300/2H CE Belgesi",
+            "description": "WAT Motor / WEG Motor"
+          },
+          {
+            "pdf": "/certificate/JA-F300-WEG.pdf",
+            "code": "JA",
+            "name": "Axial Jet Fan F300/2H CE Belgesi",
+            "description": "WAT Motor / WEG Motor"
+          },
+          {
+            "pdf": "/certificate/TAA-F300-WEG.pdf",
+            "code": "TAA",
+            "name": "Cowled Axial Fan F300/2H CE Belgesi",
+            "description": "WAT Motor / WEG Motor"
+          },
+          {
+            "pdf": "/certificate/RAA-CAA-F300-WEG.pdf",
+            "code": "RAA-CAA",
+            "name": "Roof & Cellular Axial Fans F300/2H CE Belgesi",
+            "description": "WAT Motor / WEG Motor"
+          }
+        ],
+        "title": "CE (EN 12101-3) Belgeleri"
       }
     ],
-    "ctaTag": "Kalite Taahhüdü",
-    "ctaTitle": "Sertifikalarımız hakkında daha fazla bilgi almak ister misiniz?",
     "ctaDesc": "Teknik ekibimiz sertifika ve belge detayları konusunda size yardımcı olmaktan memnuniyet duyar.",
+    "ctaAbout": "Hakkımızda",
+    "ctaTitle": "Sertifikalarımız hakkında daha fazla bilgi almak ister misiniz?",
+    "heroDesc": "Ulusal ve uluslararası standartlara uygunluğumuzu belgeleyen sertifikalarımız, kalite taahhüdümüzün somut kanıtıdır.",
+    "metaTitle": "Sertifikalar | Novves",
     "ctaContact": "Bize Ulaşın",
-    "ctaAbout": "Hakkımızda"
-  },
-  "politikamiz": {
-    "metaTitle": "Politikamız | Novves",
-    "metaDescription": "NOVVES Entegre Yönetim Politikası — Çevre, sürdürülebilirlik, iş sağlığı ve güvenliği, kalite yönetimi.",
-    "breadcrumbHome": "Ana Sayfa",
-    "breadcrumbCorporate": "Kurumsal",
-    "breadcrumbPage": "Politikamız",
-    "badge": "Kurumsal",
-    "heroTitle1": "Entegre Yönetim",
-    "heroTitleHighlight": "Politikamız",
-    "introCompany": "NOVVES Elektrik Motor A.Ş.",
-    "introTitle": "Kalite, Çevre ve İş Güvenliği",
-    "introP1": "NOVVES Elektrik Motor A.Ş. olarak, Yalova'daki 3.000 m² üretim tesisimiz ve İstanbul Kozyatağı'ndaki merkez ofisimizle, ulusal ve uluslararası mevzuata tam uyumla faaliyet göstermekteyiz.",
-    "introP2Before": "Endüstriyel ve konfor amaçlı fan sistemleri üretiminde, kaliteyi sürekli artırmak, yenilikçi çözümler sunmak ve müşteri memnuniyetini",
-    "introP2Bold": "her zaman en üst seviyede tutmak",
-    "introP2After": "öncelikli hedeflerimizdir.",
-    "sections": [
+    "heroTitle1": "Sertifika &",
+    "statsItems": [
       {
-        "title": "Çevre ve Sürdürülebilirlik",
-        "number": "01",
-        "items": [
-          "Doğal kaynakları verimli ve etkin kullanırız.",
-          "Atıkları minimize ederek çevreye zarar vermeden bertaraf ederiz.",
-          "Her türlü kirliliği kaynağında önleyerek çevreyle uyumlu faaliyetler yürütürüz.",
-          "Geri dönüşüm, yeniden kullanım ve diğer atık yönetimi uygulamalarını sürekli geliştiririz.",
-          "Enerji verimliliği ve sürdürülebilir enerji kullanımında öncü olmayı hedefleriz.",
-          "Çalışanlarımıza, gerektiğinde çevreye zarar verebilecek işleri durdurma yetkisi tanırız."
-        ]
+        "label": "Sertifika",
+        "value": "17+"
       },
       {
-        "title": "İş Sağlığı ve Güvenliği",
-        "number": "02",
-        "items": [
-          "Çevresel ve mesleki riskleri değerlendirerek iş kazalarını önlemeye yönelik sistemler kurarız.",
-          "Tüm ekipmanlarımızda güvenli, sürdürülebilir ve modern teknolojiler kullanırız.",
-          "Meslek hastalıklarını önlemek için eğitim ve koruyucu tedbirleri hayata geçiririz.",
-          "Proaktif yaklaşımı benimseyerek riskleri öngörüp önceden önlem alırız.",
-          "İş sağlığı ve güvenliği performansımızı sürekli gözden geçirir, hedeflerimizi güncelleriz."
-        ]
+        "label": "Sistem Belgeleri",
+        "value": "ISO"
       },
       {
-        "title": "Çalışan Katılımı ve Gelişimi",
-        "number": "03",
-        "items": [
-          "Tüm çalışanlarımızın bilgi ve yetkinliğini artırmak için düzenli eğitimler düzenleriz.",
-          "Çalışan temsilcilerini karar alma süreçlerine entegre eder, aktif katılımı teşvik ederiz.",
-          "Katılımın önündeki engelleri ortadan kaldırarak kurumsal bağlılığı artırırız."
-        ]
+        "label": "Ex-Proof Onaylı",
+        "value": "ATEX"
       },
       {
-        "title": "Performans ve Paydaş Odaklılık",
-        "number": "04",
-        "items": [
-          "İlgili tarafların beklentilerini analiz eder, uygun aksiyonları planlarız.",
-          "Müşteri memnuniyetini beklentinin ötesine taşımayı hedefleriz.",
-          "Entegre Yönetim Sistemi'nin etkinliğini sürekli geliştirir, sistem performansımızı ölçeriz.",
-          "Tedarikçilerimiz ve çalışanlarımızla birlikte sektöre örnek olacak uygulamalara öncülük ederiz."
-        ]
+        "label": "EN 12101-3 Uyumlu",
+        "value": "CE"
       }
     ],
-    "closingQuote": "NOVVES Elektrik Motor A.Ş., sürdürülebilirlik, kalite ve iş güvenliğini bütünsel bir sistem olarak görür; entegre yönetim anlayışını tüm süreçlerine yansıtarak değer üretmeye devam eder."
+    "downloadPdf": "PDF İndir",
+    "breadcrumbHome": "Ana Sayfa",
+    "breadcrumbPage": "Sertifikalar",
+    "documentSuffix": "belge",
+    "metaDescription": "NOVVES'in sahip olduğu ulusal ve uluslararası sertifikalar, CE belgeleri, ISO standartları ve ATEX sertifikaları.",
+    "accreditationLabel": "Akreditasyon & Standartlar",
+    "heroTitleHighlight": "Belgeler",
+    "breadcrumbCorporate": "Kurumsal"
   },
   "basinOdasi": {
-    "metaTitle": "Basın Odası | Novves",
-    "metaDescription": "NOVVES basın odası — haberler, duyurular ve medya materyalleri.",
-    "breadcrumbHome": "Ana Sayfa",
-    "breadcrumbCorporate": "Kurumsal",
-    "breadcrumbPage": "Basın Odası",
     "badge": "Kurumsal",
-    "heroTitle1": "Basın",
-    "heroTitleHighlight": "Odası",
     "heroDesc": "Haberler, duyurular ve medya materyalleri.",
-    "comingSoon": "Çok Yakında",
-    "comingSoonDesc": "Basın odası için içerikler hazırlanmaktadır. Haber, duyuru ve medya materyalleri yakında burada yayınlanacaktır.",
     "mediaTag": "Medya",
+    "metaTitle": "Basın Odası | Novves",
+    "comingSoon": "Çok Yakında",
+    "contactTag": "İletişim",
+    "heroTitle1": "Basın",
     "mediaTitle": "Medya Kaynakları",
+    "contactDesc": "Kurumsal iletişim ekibimiz basın ve medya taleplerinize en kısa sürede dönüş yapacaktır.",
+    "contactForm": "İletişim Formu",
     "mediaAssets": [
       {
         "title": "Kurumsal Logo Paketi",
@@ -410,22 +486,63 @@
         "description": "Yüksek çözünürlüklü üretim tesisi fotoğrafları"
       }
     ],
-    "comingSoonSmall": "Çok Yakında",
-    "contactTag": "İletişim",
     "contactTitle": "Basın ve medya talepleri için",
-    "contactDesc": "Kurumsal iletişim ekibimiz basın ve medya taleplerinize en kısa sürede dönüş yapacaktır.",
-    "contactForm": "İletişim Formu"
+    "breadcrumbHome": "Ana Sayfa",
+    "breadcrumbPage": "Basın Odası",
+    "comingSoonDesc": "Basın odası için içerikler hazırlanmaktadır. Haber, duyuru ve medya materyalleri yakında burada yayınlanacaktır.",
+    "comingSoonSmall": "Çok Yakında",
+    "metaDescription": "NOVVES basın odası — haberler, duyurular ve medya materyalleri.",
+    "heroTitleHighlight": "Odası",
+    "breadcrumbCorporate": "Kurumsal"
   },
   "haberler": {
-    "metaTitle": "Haberler | Novves",
-    "metaDescription": "NOVVES haberler -- sektörel gelişmeler, yenilikler ve kurumsal duyurular.",
-    "breadcrumbHome": "Ana Sayfa",
-    "breadcrumbCorporate": "Kurumsal",
-    "breadcrumbPage": "Haberler",
     "badge": "Kurumsal",
-    "heroTitle": "Haberler",
     "heroDesc": "Sektörel gelişmeler, yenilikler ve kurumsal duyurular.",
+    "heroTitle": "Haberler",
+    "metaTitle": "Haberler | Novves",
     "comingSoon": "Çok Yakında",
-    "comingSoonDesc": "Haberler için içerikler hazırlanmaktadır. Sektörel gelişmeler, yenilikler ve kurumsal duyurular yakında burada yayınlanacaktır."
+    "breadcrumbHome": "Ana Sayfa",
+    "breadcrumbPage": "Haberler",
+    "comingSoonDesc": "Haberler için içerikler hazırlanmaktadır. Sektörel gelişmeler, yenilikler ve kurumsal duyurular yakında burada yayınlanacaktır.",
+    "metaDescription": "NOVVES haberler -- sektörel gelişmeler, yenilikler ve kurumsal duyurular.",
+    "breadcrumbCorporate": "Kurumsal"
+  },
+  "ceoMesaji": {
+    "badge": "Kurumsal",
+    "signOff": "İlginiz ve güveniniz için teşekkür ederiz.",
+    "ceoTitle": "Yönetim Kurulu Başkanı & Genel Müdür",
+    "greeting": "Değerli Ziyaretçimiz,",
+    "heroDesc": "Zeki Kadir Özüntürk'ün vizyonu ve NOVVES'in hikâyesi.",
+    "linkTeam": "Ekibimiz",
+    "messageP1": "NOVVES ailesine hoş geldiniz, sizi burada görmekten mutluluk duyuyoruz.",
+    "messageP2": "Kuruluşumuzdan bu yana endüstriyel ve konfor havalandırması alanında; özellikle otopark, tesisler ve bina sistemlerinde yenilikçi jet fan ve duman tahliye çözümleri geliştiriyoruz. Her projede insanların güvenliğini ve konforunu ön plana alarak mühendislik disiplinini en üst seviyede uyguluyoruz.",
+    "messageP3": "ArGe odaklı yaklaşımımız ve güçlü üretim altyapımız sayesinde; proje analizi, CFD simülasyonları, test ve devreye alma süreçlerini eksiksiz bir şekilde yürütüyor, ürünlerimizin güvenlik, performans ve çevresel sürdürülebilirlik hedeflerine titizlikle ulaşmasını sağlıyoruz.",
+    "messageP4": "Kardeşim Erdal Özüntürk'le birlikte inşa ettiğimiz bu firmada, bugün 1.200'ü aşkın ürün yelpazesiyle her projeye özel uzman çözümler sunmaktayız. Türkiye'nin dört bir yanında ve 50'yi aşkın ülkede gerçekleştirdiğimiz projeler, kalitemizin ve güvenilirliğimizin en güçlü kanıtıdır.",
+    "messageP5": "Gelecekte de teknolojiye, iş güvenliğine ve çevreye duyarlı üretim anlayışımızla, global pazarda liderliğimizi daha da güçlendirmeyi hedefliyoruz. Sürdürülebilir enerji verimliliği, dijital mühendislik araçları ve genişleyen ihracat ağımızla NOVVES'i dünya markası hâline getirme yolculuğumuz kararlılıkla devam etmektedir.",
+    "messageP6": "Web sitemiz üzerinden ürünlerimizi detaylı şekilde inceleyebilir, projeleriniz için teknik destek taleplerini kolayca iletebilirsiniz. Ekibimiz sizinle çalışmaktan her zaman mutluluk duyacaktır.",
+    "metaTitle": "CEO'nun Mesajı | Novves",
+    "pullQuote": "Bizim için kalite bir tesadüf değil, sistematik bir sürecin doğal sonucudur.",
+    "heroTitle1": "CEO'nun",
+    "highlights": [
+      {
+        "label": "Ürün Çeşidi",
+        "value": "1.200+"
+      },
+      {
+        "label": "Ülkeye İhracat",
+        "value": "50+"
+      },
+      {
+        "label": "Yıllık Tecrübe",
+        "value": "10+"
+      }
+    ],
+    "linkContact": "İletişime Geçin",
+    "linkWhoWeAre": "Biz Kimiz?",
+    "breadcrumbHome": "Ana Sayfa",
+    "breadcrumbPage": "CEO'nun Mesajı",
+    "metaDescription": "Novves Yönetim Kurulu Başkanı ve Genel Müdür Zeki Kadir Özüntürk'ün mesajı.",
+    "heroTitleHighlight": "Mesajı",
+    "breadcrumbCorporate": "Kurumsal"
   }
 }

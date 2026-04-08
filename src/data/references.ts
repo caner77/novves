@@ -2091,7 +2091,7 @@ export const references: Reference[] = [
       "KOI CB"
     ],
     "description": "Bu projede Dikdörtgen Duvar Tipi Fan, Dikdörtgen Aksiyal Duvar Tipi Fan, Aksiyal Kovan Tipi Fan ve Yuvarlak Kanal Fanı NOVVES tarafından sağlanmıştır.",
-    "image": "arkadagjpg"
+    "image": "arkadaj.jpg"
   },
   {
     "id": 112,

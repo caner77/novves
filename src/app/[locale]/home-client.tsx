@@ -40,6 +40,27 @@ type HomeDict = {
     intro: string;
     items: { label: string; desc: string }[];
   }[];
+  animation2: {
+    startCard: {
+      badge: string;
+      titleLine1: string;
+      titleLine2: string;
+      titleLine3: string;
+      subtitle: string;
+    };
+    endCard: {
+      series: string;
+      title: string;
+      desc: string;
+      spec1Value: string;
+      spec1Label: string;
+      spec2Value: string;
+      spec2Label: string;
+      spec3Value: string;
+      spec3Label: string;
+      cta: string;
+    };
+  };
   midCta: { title: string; desc: string; button: string };
   productCategories: {
     tag: string;
@@ -151,6 +172,10 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
         framesPath="/animation/frames-2"
         totalFrames={241}
         id="animation-2"
+        startCard={dict.animation2.startCard}
+        endCard={dict.animation2.endCard}
+        locale={locale}
+        productHref="/urunler/kovan-tipi-aksiyal-fanlar"
       />
 
       {/* ═══ PILLARS 2 & 3 — Üretim & Kurulum ═══ */}

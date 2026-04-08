@@ -7,8 +7,8 @@
     "subtitle": "End-to-end engineering solutions for smoke extraction, comfort HVAC, and industrial ventilation.",
     "ctaPrimary": "Get a Quote for Your Project",
     "ctaSecondary": "Explore Products",
-    "heroImageAlt": "Axial Box Fan",
-    "heroLabel": "HOUND Series",
+    "heroImageAlt": "Axial Jet Fan",
+    "heroLabel": "DRAGONFLY Series",
     "stats": [
       {
         "value": "1,200+",
@@ -28,10 +28,10 @@
       }
     ],
     "endCard": {
-      "series": "HOUND SERIES",
-      "title": "Axial Box Fan",
-      "desc": "EN 12101-3 certified, F400/2H fire-rated axial box fan. High airflow capacity and low noise level for superior industrial ventilation performance.",
-      "spec1Value": "F400",
+      "series": "DRAGONFLY SERIES",
+      "title": "Axial Jet Fan",
+      "desc": "EN 12101-3 certified, F300/2H fire-rated smoke extraction fans. CFD-supported design for maximum performance.",
+      "spec1Value": "F300",
       "spec1Label": "Fire Class",
       "spec2Value": "2H",
       "spec2Label": "Endurance",

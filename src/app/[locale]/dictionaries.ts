@@ -1,50 +1,39 @@
 import "server-only";
+import fs from "fs";
+import path from "path";
 
-const dictionaries = {
-  tr: async () => {
-    const common = (await import("./dictionaries/tr/common.json")).default;
-    const home = (await import("./dictionaries/tr/home.json")).default;
-    const solutions = (await import("./dictionaries/tr/solutions.json")).default;
-    const products = (await import("./dictionaries/tr/products.json")).default;
-    const services = (await import("./dictionaries/tr/services.json")).default;
-    const technical = (await import("./dictionaries/tr/technical.json")).default;
-    const corporate = (await import("./dictionaries/tr/corporate.json")).default;
-    const contact = (await import("./dictionaries/tr/contact.json")).default;
-    const sustainability = (await import("./dictionaries/tr/sustainability.json")).default;
-    const kvkk = (await import("./dictionaries/tr/kvkk.json")).default;
-    return { common, home, solutions, products, services, technical, corporate, contact, sustainability, kvkk };
-  },
-  en: async () => {
-    const common = (await import("./dictionaries/en/common.json")).default;
-    const home = (await import("./dictionaries/en/home.json")).default;
-    const solutions = (await import("./dictionaries/en/solutions.json")).default;
-    const products = (await import("./dictionaries/en/products.json")).default;
-    const services = (await import("./dictionaries/en/services.json")).default;
-    const technical = (await import("./dictionaries/en/technical.json")).default;
-    const corporate = (await import("./dictionaries/en/corporate.json")).default;
-    const contact = (await import("./dictionaries/en/contact.json")).default;
-    const sustainability = (await import("./dictionaries/en/sustainability.json")).default;
-    const kvkk = (await import("./dictionaries/en/kvkk.json")).default;
-    return { common, home, solutions, products, services, technical, corporate, contact, sustainability, kvkk };
-  },
-  ru: async () => {
-    const common = (await import("./dictionaries/ru/common.json")).default;
-    const home = (await import("./dictionaries/ru/home.json")).default;
-    const solutions = (await import("./dictionaries/ru/solutions.json")).default;
-    const products = (await import("./dictionaries/ru/products.json")).default;
-    const services = (await import("./dictionaries/ru/services.json")).default;
-    const technical = (await import("./dictionaries/ru/technical.json")).default;
-    const corporate = (await import("./dictionaries/ru/corporate.json")).default;
-    const contact = (await import("./dictionaries/ru/contact.json")).default;
-    const sustainability = (await import("./dictionaries/ru/sustainability.json")).default;
-    const kvkk = (await import("./dictionaries/ru/kvkk.json")).default;
-    return { common, home, solutions, products, services, technical, corporate, contact, sustainability, kvkk };
-  },
-};
+function loadJson(locale: string, file: string) {
+  const filePath = path.join(
+    process.cwd(),
+    "src",
+    "app",
+    "[locale]",
+    "dictionaries",
+    locale,
+    `${file}.json`
+  );
+  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+}
 
-export type Locale = keyof typeof dictionaries;
+function loadAll(locale: string) {
+  return {
+    common: loadJson(locale, "common"),
+    home: loadJson(locale, "home"),
+    solutions: loadJson(locale, "solutions"),
+    products: loadJson(locale, "products"),
+    services: loadJson(locale, "services"),
+    technical: loadJson(locale, "technical"),
+    corporate: loadJson(locale, "corporate"),
+    contact: loadJson(locale, "contact"),
+    sustainability: loadJson(locale, "sustainability"),
+    kvkk: loadJson(locale, "kvkk"),
+  };
+}
+
+const validLocales = ["tr", "en", "ru"] as const;
+export type Locale = (typeof validLocales)[number];
 
 export const hasLocale = (locale: string): locale is Locale =>
-  locale in dictionaries;
+  validLocales.includes(locale as Locale);
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+export const getDictionary = async (locale: Locale) => loadAll(locale);

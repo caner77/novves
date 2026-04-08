@@ -124,7 +124,7 @@ export function Footer({ locale, dict }: { locale: string; dict: any }) {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(175deg, rgba(15,23,42,0.88) 0%, rgba(15,23,42,0.78) 40%, rgba(15,23,42,0.92) 100%)",
+              "linear-gradient(175deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.65) 40%, rgba(15,23,42,0.80) 100%)",
           }}
         />
         {/* Orange accent glow top-right */}
@@ -247,7 +247,7 @@ export function Footer({ locale, dict }: { locale: string; dict: any }) {
                 <span className="pt-1.5">
                   19 Mayıs Mh. Sümer Sk.<br />
                   Zitaş Plaza C2 Blok No:7<br />
-                  Kadıköy / İstanbul / Turkey
+                  Kadıköy / İstanbul / Türkiye
                 </span>
               </div>
             </div>

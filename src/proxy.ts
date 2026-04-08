@@ -27,6 +27,22 @@ function getLocale(request: NextRequest): string {
   return defaultLocale;
 }
 
+function getCookieFromRequest(request: NextRequest, name: string): string | undefined {
+  const cookieHeader = request.headers.get("cookie") ?? "";
+  const match = cookieHeader.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : undefined;
+}
+
+/**
+ * Check if an auth cookie exists and is non-empty.
+ * Real JWT signature verification happens in the API route handlers
+ * via the full jsonwebtoken library. The proxy only gates direct URL
+ * access to the client-side dashboard page.
+ */
+function hasAuthCookie(cookieValue: string | undefined): boolean {
+  return typeof cookieValue === "string" && cookieValue.length > 0;
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -42,6 +58,46 @@ export function proxy(request: NextRequest) {
     );
   }
 
+  // --- Admin API paths: skip locale redirect, just pass through ---
+  if (pathname.startsWith("/api/admin")) {
+    return NextResponse.next();
+  }
+
+  // --- Admin panel protection ---
+  if (pathname.startsWith("/novves-panel")) {
+    // Dashboard and sub-paths require authentication
+    if (pathname.startsWith("/novves-panel/dashboard")) {
+      const accessToken = getCookieFromRequest(request, "admin_access_token");
+      const refreshToken = getCookieFromRequest(request, "admin_refresh_token");
+
+      if (!hasAuthCookie(accessToken) && !hasAuthCookie(refreshToken)) {
+        const loginUrl = request.nextUrl.clone();
+        loginUrl.pathname = "/novves-panel";
+        return NextResponse.redirect(loginUrl);
+      }
+    }
+
+    // Do NOT apply locale redirect to admin panel paths
+    // Still apply CSP headers
+    const cspHeader = [
+      `default-src 'self'`,
+      `script-src 'self' 'unsafe-inline'`,
+      `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
+      `img-src 'self' blob: data: https://i.ytimg.com`,
+      `font-src 'self' https://fonts.gstatic.com`,
+      `object-src 'none'`,
+      `base-uri 'self'`,
+      `form-action 'self'`,
+      `frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com`,
+      `frame-ancestors 'self'`,
+      `upgrade-insecure-requests`,
+    ].join("; ");
+
+    const response = NextResponse.next();
+    response.headers.set("Content-Security-Policy", cspHeader);
+    return response;
+  }
+
   // --- Locale Routing ---
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
@@ -55,7 +111,7 @@ export function proxy(request: NextRequest) {
 
   const cspHeader = [
     `default-src 'self'`,
-    `script-src 'self' 'unsafe-inline' 'unsafe-eval'`,
+    `script-src 'self' 'unsafe-inline'`,
     `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
     `img-src 'self' blob: data: https://i.ytimg.com`,
     `font-src 'self' https://fonts.gstatic.com`,
