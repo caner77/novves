@@ -113,7 +113,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 <div className="absolute inset-4 rounded-full border border-dashed border-gray-200" />
                 <div className="absolute inset-12 rounded-full border border-gray-100" />
                 <Image
-                  src="/images/products/hound-al.jpg"
+                  src="/images/products/hound-al.png"
                   alt="HOUND Hava Damperi"
                   fill
                   className="object-contain p-10 drop-shadow-2xl"

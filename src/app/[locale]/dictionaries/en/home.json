@@ -11,15 +11,15 @@
     "heroLabel": "HOUND Series",
     "stats": [
       {
-        "value": "1,200+",
-        "label": "Product Varieties"
+        "value": "7,000+",
+        "label": "Product Variations"
       },
       {
-        "value": "113+",
+        "value": "500+",
         "label": "Completed Projects"
       },
       {
-        "value": "18+",
+        "value": "30+",
         "label": "Export Countries"
       },
       {
@@ -29,9 +29,9 @@
     ],
     "endCard": {
       "series": "HOUND SERIES",
-      "title": "Axial Box Fan",
-      "desc": "EN 12101-3 certified, F400/2H fire-rated axial box fan. High airflow capacity and low noise level for superior industrial ventilation performance.",
-      "spec1Value": "F400",
+      "title": "Axial Plenum Fan",
+      "desc": "EN 12101-3 certified, F300/F400 fire-rated axial plenum fan. High airflow capacity and low noise level for superior industrial ventilation performance.",
+      "spec1Value": "F300/F400",
       "spec1Label": "Fire Class",
       "spec2Value": "2H",
       "spec2Label": "Endurance",
@@ -57,7 +57,7 @@
         },
         {
           "label": "Project-Focused Approach",
-          "desc": "We go beyond standard solutions — designing custom systems that preserve architectural aesthetics while fully complying with technical specifications."
+          "desc": "We manufacture products fully compliant with technical specifications."
         }
       ]
     },

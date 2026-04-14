@@ -79,10 +79,14 @@ export function proxy(request: NextRequest) {
 
     // Do NOT apply locale redirect to admin panel paths
     // Still apply CSP headers
+    const scriptSrc =
+      process.env.NODE_ENV === "production"
+        ? `script-src 'self' 'unsafe-inline'`
+        : `script-src 'self' 'unsafe-inline' 'unsafe-eval'`;
     const cspHeader = [
       `default-src 'self'`,
-      `script-src 'self' 'unsafe-inline'`,
-      `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
+      scriptSrc,
+      `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com`,
       `img-src 'self' blob: data: https://i.ytimg.com`,
       `font-src 'self' https://fonts.gstatic.com`,
       `object-src 'none'`,
@@ -109,9 +113,13 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(request.nextUrl);
   }
 
+  const publicScriptSrc =
+    process.env.NODE_ENV === "production"
+      ? `script-src 'self' 'unsafe-inline'`
+      : `script-src 'self' 'unsafe-inline' 'unsafe-eval'`;
   const cspHeader = [
     `default-src 'self'`,
-    `script-src 'self' 'unsafe-inline'`,
+    publicScriptSrc,
     `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
     `img-src 'self' blob: data: https://i.ytimg.com`,
     `font-src 'self' https://fonts.gstatic.com`,
@@ -138,6 +146,6 @@ export const config = {
      * - favicon.ico, sitemap.xml, robots.txt (metadata files)
      * - public folder assets (images, certificates, etc.)
      */
-    "/((?!_next/static|_next/image|favicon.ico|icon.svg|sitemap.xml|robots.txt|images/|certificate/|kvkk/|animation).*)",
+    "/((?!_next/static|_next/image|favicon.ico|icon.svg|sitemap.xml|robots.txt|images/|certificate/|kvkk/|animation|.*\\.mp4$).*)",
   ],
 };

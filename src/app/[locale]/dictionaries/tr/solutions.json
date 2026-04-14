@@ -49,16 +49,16 @@
     "areasTitle": "Hangi Yapılarda Kullanılır?",
     "areasDesc": "Her proje özelinde en uygun ürün kombinasyonu belirlenir.",
     "areas": [
-      { "title": "Kapalı Otoparklar", "description": "CO tahliyesi + yangın anında duman atımı", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
-      { "title": "Karayolu ve Demiryolu Tünelleri", "description": "Yangın zonlama ve hava yönlendirme", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "MARLIN", "type": "Kovan Tipi Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] },
-      { "title": "Alışveriş Merkezleri (AVM)", "description": "Duman kontrolü ve tahliyesi", "products": [{ "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }, { "name": "MARLIN", "type": "Kovan Tipi Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
-      { "title": "Stadyumlar ve Toplantı Salonları", "description": "Acil durumlarda duman boşaltımı", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "MARLIN", "type": "Kovan Tipi Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] },
+      { "title": "Kapalı Otoparklar", "description": "CO tahliyesi + yangın anında duman atımı", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
+      { "title": "Karayolu ve Demiryolu Tünelleri", "description": "Yangın zonlama ve hava yönlendirme", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "MARLIN", "type": "Kovan Tipi Aksiyal Fanlar", "image": "/images/products/marlin.png" }] },
+      { "title": "Alışveriş Merkezleri (AVM)", "description": "Duman kontrolü ve tahliyesi", "products": [{ "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }, { "name": "MARLIN", "type": "Kovan Tipi Aksiyal Fanlar", "image": "/images/products/marlin.png" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
+      { "title": "Stadyumlar ve Toplantı Salonları", "description": "Acil durumlarda duman boşaltımı", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "MARLIN", "type": "Kovan Tipi Aksiyal Fanlar", "image": "/images/products/marlin.png" }] },
       { "title": "Endüstriyel Üretim Tesisleri", "description": "Proses kaynaklı sıcak gaz tahliyesi", "products": [{ "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }, { "name": "OWL", "type": "Duvar Tipi Fanlar", "image": "/images/products/owl-cer.jpg" }] },
       { "title": "Hastaneler ve Sağlık Tesisleri", "description": "Hasta alanlarında duman zonlaması", "products": [{ "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
-      { "title": "Havalimanları ve Metro İstasyonları", "description": "Alt katman duman tahliyesi", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "MARLIN", "type": "Kovan Tipi Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }, { "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }] },
-      { "title": "Depo ve Lojistik Merkezleri", "description": "Yüksek hacimlerde duman kontrolü", "products": [{ "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }, { "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
+      { "title": "Havalimanları ve Metro İstasyonları", "description": "Alt katman duman tahliyesi", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "MARLIN", "type": "Kovan Tipi Aksiyal Fanlar", "image": "/images/products/marlin.png" }, { "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }] },
+      { "title": "Depo ve Lojistik Merkezleri", "description": "Yüksek hacimlerde duman kontrolü", "products": [{ "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }, { "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
       { "title": "Enerji Santralleri & Jeneratör Odaları", "description": "Elektriksel yangınlara karşı egzoz", "products": [{ "name": "BEAR", "type": "Exproof Fanlar", "image": "/images/products/bear-bp.jpg" }, { "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }] },
-      { "title": "Otel ve Rezidanslar (Yüksek Yapılar)", "description": "Merdiven basınçlandırma, duman tahliyesi", "products": [{ "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }, { "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] }
+      { "title": "Otel ve Rezidanslar (Yüksek Yapılar)", "description": "Merdiven basınçlandırma, duman tahliyesi", "products": [{ "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }, { "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] }
     ],
     "faqLabel": "SSS",
     "faqTitle": "Sıkça Sorulan Sorular",
@@ -269,9 +269,9 @@
     "areas": [
       { "title": "Otomotiv Fabrikaları", "description": "Boya kabini egzozu, kaynak dumanı tahliyesi", "products": [{ "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] },
       { "title": "Metal ve Çelik Tesisleri", "description": "Sıcak gaz tahliyesi ve taze hava beslemesi", "products": [{ "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }, { "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }] },
-      { "title": "Tekstil Fabrikaları", "description": "Nem kontrolü ve lif tozu tahliyesi", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }, { "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }] },
+      { "title": "Tekstil Fabrikaları", "description": "Nem kontrolü ve lif tozu tahliyesi", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }, { "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }] },
       { "title": "Kimya ve Petrokimya Tesisleri", "description": "Korozif gaz egzozu ve taze hava besleme", "products": [{ "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }, { "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }] },
-      { "title": "Depo ve Lojistik Merkezleri", "description": "Genel havalandırma ve sıcaklık kontrolü", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] }
+      { "title": "Depo ve Lojistik Merkezleri", "description": "Genel havalandırma ve sıcaklık kontrolü", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] }
     ],
     "faqLabel": "SSS",
     "faqTitle": "Sıkça Sorulan Sorular",
@@ -338,9 +338,9 @@
     "areasTitle": "Hangi Tesislerde Kullanılır?",
     "areasDesc": "Her hayvancılık tesisi tipine özel havalandırma çözümleri sunulmaktadır.",
     "areas": [
-      { "title": "Tavuk Kümesleri (Broiler/Yumurta)", "description": "Tünel havalandırma ve evaporatif soğutma", "products": [{ "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] },
+      { "title": "Tavuk Kümesleri (Broiler/Yumurta)", "description": "Tünel havalandırma ve evaporatif soğutma", "products": [{ "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }] },
       { "title": "Büyükbaş Ahırları", "description": "Amonyak tahliyesi ve taze hava beslemesi", "products": [{ "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] },
-      { "title": "Süt Çiftlikleri", "description": "Sağım alanı ve barınma iklim kontrolü", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] },
+      { "title": "Süt Çiftlikleri", "description": "Sağım alanı ve barınma iklim kontrolü", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] },
       { "title": "Küçükbaş Barınma Tesisleri", "description": "Koyun ve keçi barınaklarında havalandırma", "products": [{ "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }, { "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }] }
     ],
     "faqLabel": "SSS",
@@ -409,7 +409,7 @@
     "areasDesc": "Elektrik ve enerji altyapısındaki tüm kritik mekanlar için çözümler.",
     "areas": [
       { "title": "Trafo Merkezleri", "description": "Trafo kayıp ısısı tahliyesi ve sıcaklık kontrolü", "products": [{ "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] },
-      { "title": "Jeneratör Odaları", "description": "Egzoz gazı ve ısı tahliyesi", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }, { "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }] },
+      { "title": "Jeneratör Odaları", "description": "Egzoz gazı ve ısı tahliyesi", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }, { "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }] },
       { "title": "UPS ve Akü Odaları", "description": "Hidrojen gazı tahliyesi ve sıcaklık kontrolü", "products": [{ "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
       { "title": "Orta Gerilim Hücreleri", "description": "Elektriksel ısı birikimi tahliyesi", "products": [{ "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] }
     ],
@@ -478,10 +478,10 @@
     "areasTitle": "Hangi Tesislerde Kullanılır?",
     "areasDesc": "Tarımsal üretim yapılan tüm kapalı alanlarda iklim kontrolü çözümleri.",
     "areas": [
-      { "title": "Cam ve Plastik Seralar", "description": "Sıcaklık ve nem kontrolü, evaporatif soğutma", "products": [{ "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] },
+      { "title": "Cam ve Plastik Seralar", "description": "Sıcaklık ve nem kontrolü, evaporatif soğutma", "products": [{ "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }] },
       { "title": "Mantar Yetiştirme Tesisleri", "description": "Hassas nem ve sıcaklık kontrolü, taze hava besleme", "products": [{ "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }, { "name": "HUMMINGBIRD", "type": "EC Fanlar", "image": "/images/products/hummingbird-drb-ec.jpg" }] },
       { "title": "Fide Yetiştirme Seraları", "description": "Homojen iklim dağılımı ve soğutma", "products": [{ "name": "OWL", "type": "Duvar Fanları", "image": "/images/products/owl-cer.jpg" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] },
-      { "title": "Tahıl Depolama Tesisleri", "description": "Nem kontrolü ve havalandırma", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] }
+      { "title": "Tahıl Depolama Tesisleri", "description": "Nem kontrolü ve havalandırma", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }, { "name": "HERON", "type": "Çatı Fanları", "image": "/images/products/heron-ah.jpg" }] }
     ],
     "faqLabel": "SSS",
     "faqTitle": "Sıkça Sorulan Sorular",
@@ -551,7 +551,7 @@
       { "title": "Kimya ve Petrokimya Tesisleri", "description": "Yanıcı gaz ve buhar tahliyesi", "products": [{ "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }, { "name": "BEAR", "type": "ATEX Çatı Fanları", "image": "/images/products/bear-reb.jpg" }] },
       { "title": "Boya ve Vernik Fabrikaları", "description": "Solvent buharları tahliyesi", "products": [{ "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }, { "name": "BEAR", "type": "ATEX Duvar Fanları", "image": "/images/products/bear-w.jpg" }] },
       { "title": "Tahıl Silosu ve Un Fabrikaları", "description": "Yanıcı toz tahliyesi", "products": [{ "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }, { "name": "BEAR", "type": "ATEX Kanal Fanları", "image": "/images/products/bear-t.jpg" }] },
-      { "title": "Maden ve Tünel Tesisleri", "description": "Metan gazı tahliyesi ve havalandırma", "products": [{ "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] },
+      { "title": "Maden ve Tünel Tesisleri", "description": "Metan gazı tahliyesi ve havalandırma", "products": [{ "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }] },
       { "title": "İlaç ve Kozmetik Üretimi", "description": "Yanıcı solvent ve toz tahliyesi", "products": [{ "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-c.jpg" }, { "name": "BEAR", "type": "ATEX Radyal Fanlar", "image": "/images/products/bear-r.jpg" }] }
     ],
     "faqLabel": "SSS",
@@ -619,9 +619,9 @@
     "areasTitle": "Hangi Projelerde Kullanılır?",
     "areasDesc": "Havalandırma otomasyonu gerektiren tüm bina ve tesis tiplerinde çözümler.",
     "areas": [
-      { "title": "Kapalı Otopark Otomasyonu", "description": "CO sensörü tabanlı jet fan yönetimi", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
+      { "title": "Kapalı Otopark Otomasyonu", "description": "CO sensörü tabanlı jet fan yönetimi", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
       { "title": "AVM ve Ticari Bina BMS", "description": "Merkezi havalandırma otomasyon ve izleme", "products": [{ "name": "TIGER", "type": "Klima Santralleri", "image": "/images/products/tiger-main.jpg" }, { "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }] },
-      { "title": "Endüstriyel Tesis Otomasyonu", "description": "Proses havalandırma ve egzoz kontrolü", "products": [{ "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] },
+      { "title": "Endüstriyel Tesis Otomasyonu", "description": "Proses havalandırma ve egzoz kontrolü", "products": [{ "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }] },
       { "title": "Hastane ve Temiz Oda", "description": "Basınç kaskadı ve filtrasyon izleme", "products": [{ "name": "TIGER", "type": "Klima Santralleri", "image": "/images/products/tiger-main.jpg" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] }
     ],
     "faqLabel": "SSS",
@@ -759,9 +759,9 @@
     "areasTitle": "Hangi Alanlarda Kullanılır?",
     "areasDesc": "Denizcilik sektöründeki tüm havalandırma ihtiyaçlarına yönelik çözümler.",
     "areas": [
-      { "title": "Yolcu Gemileri ve Feribotlar", "description": "Yolcu mekanları ve mürettebat alanlarında iklimlendirme", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }, { "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }] },
+      { "title": "Yolcu Gemileri ve Feribotlar", "description": "Yolcu mekanları ve mürettebat alanlarında iklimlendirme", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }, { "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }] },
       { "title": "Kargo Gemileri", "description": "Kargo ambarı ve makine dairesi havalandırma", "products": [{ "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }, { "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }] },
-      { "title": "Offshore Platformları", "description": "Açık deniz platformu havalandırma ve exproof egzoz", "products": [{ "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] },
+      { "title": "Offshore Platformları", "description": "Açık deniz platformu havalandırma ve exproof egzoz", "products": [{ "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }] },
       { "title": "Yatlar ve Mega Yatlar", "description": "Konfor havalandırma ve makine dairesi egzoz", "products": [{ "name": "KOI", "type": "Kanal Fanları", "image": "/images/products/koi-cb.jpg" }, { "name": "HUMMINGBIRD", "type": "EC Fanlar", "image": "/images/products/hummingbird-drb-ec.jpg" }] }
     ],
     "faqLabel": "SSS",
@@ -830,9 +830,9 @@
     "areasDesc": "Standart ürünlerle çözülemeyen tüm özel ihtiyaçlar için proje bazlı imalat.",
     "areas": [
       { "title": "Endüstriyel Proses Tesisleri", "description": "Yüksek sıcaklık ve korozif gaz ortamlarında özel fanlar", "products": [{ "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }, { "name": "BEAR", "type": "ATEX Fanlar", "image": "/images/products/bear-bp.jpg" }] },
-      { "title": "Enerji Santralleri", "description": "Özel boyut ve kapasite gerektiren egzoz ve besleme fanları", "products": [{ "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] },
-      { "title": "Marin ve Offshore Projeleri", "description": "Sınıf onaylı özel malzeme ve boyut gerektiren marin fanlar", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }, { "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }] },
-      { "title": "Altyapı ve Tünel Projeleri", "description": "Özel çap ve performans değerlerinde tünel fanları", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] }
+      { "title": "Enerji Santralleri", "description": "Özel boyut ve kapasite gerektiren egzoz ve besleme fanları", "products": [{ "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }] },
+      { "title": "Marin ve Offshore Projeleri", "description": "Sınıf onaylı özel malzeme ve boyut gerektiren marin fanlar", "products": [{ "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }, { "name": "NAUTILUS", "type": "Endüstriyel Fanlar", "image": "/images/products/nautilus-cif-cidarli.jpg" }] },
+      { "title": "Altyapı ve Tünel Projeleri", "description": "Özel çap ve performans değerlerinde tünel fanları", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }] }
     ],
     "faqLabel": "SSS",
     "faqTitle": "Sıkça Sorulan Sorular",
@@ -899,10 +899,10 @@
     "areasTitle": "Hangi Projelerde Kullanılır?",
     "areasDesc": "CFD analizi gerektiren tüm havalandırma ve ısı transferi projelerinde danışmanlık hizmeti.",
     "areas": [
-      { "title": "Kapalı Otopark Projeleri", "description": "Jet fan yerleşimi ve CO/duman tahliye simülasyonu", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
-      { "title": "Tünel Havalandırma Projeleri", "description": "Yangın senaryosu ve hava hızı analizi", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.jpg" }] },
+      { "title": "Kapalı Otopark Projeleri", "description": "Jet fan yerleşimi ve CO/duman tahliye simülasyonu", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "HOUND", "type": "Damperler", "image": "/images/products/hound.jpg" }] },
+      { "title": "Tünel Havalandırma Projeleri", "description": "Yangın senaryosu ve hava hızı analizi", "products": [{ "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }, { "name": "MARLIN", "type": "Aksiyal Fanlar", "image": "/images/products/marlin.png" }] },
       { "title": "Veri Merkezi Soğutma", "description": "Raf bazlı sıcaklık dağılımı ve hotspot analizi", "products": [{ "name": "TIGER", "type": "Klima Santralleri", "image": "/images/products/tiger-main.jpg" }, { "name": "HUMMINGBIRD", "type": "EC Fanlar", "image": "/images/products/hummingbird-drb-ec.jpg" }] },
-      { "title": "Yüksek Yapılarda Duman Kontrolü", "description": "Merdiven basınçlandırma ve duman zonlama simülasyonu", "products": [{ "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }, { "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.jpg" }] }
+      { "title": "Yüksek Yapılarda Duman Kontrolü", "description": "Merdiven basınçlandırma ve duman zonlama simülasyonu", "products": [{ "name": "TURTLE", "type": "Hücreli Fanlar", "image": "/images/products/turtle-a.jpg" }, { "name": "DRAGONFLY", "type": "Duman ve Isı Tahliye Fanları", "image": "/images/products/dragonfly-c.png" }] }
     ],
     "faqLabel": "SSS",
     "faqTitle": "Sıkça Sorulan Sorular",

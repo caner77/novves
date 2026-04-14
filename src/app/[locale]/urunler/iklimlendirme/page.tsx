@@ -143,7 +143,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 <div className="absolute inset-4 rounded-full border border-dashed border-gray-200" />
                 <div className="absolute inset-12 rounded-full border border-gray-100" />
                 <Image
-                  src="/images/products/tiger-pre.jpg"
+                  src="/images/products/tiger-pre.png"
                   alt="TIGER Klima Santrali"
                   fill
                   className="object-contain p-10 drop-shadow-2xl"
@@ -173,7 +173,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               <div className="relative mx-auto aspect-square w-full max-w-lg">
                 <div className="absolute inset-4 rounded-full border border-dashed border-gray-200/80" />
                 <Image
-                  src="/images/products/dolphin-pre.jpg"
+                  src="/images/products/dolphin-pre.png"
                   alt="DOLPHIN Nem Alma Santrali"
                   fill
                   className="object-contain p-10 drop-shadow-2xl"
@@ -285,7 +285,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 <div className="absolute inset-4 rounded-full border border-dashed border-white/[0.06]" />
                 <div className="absolute inset-12 rounded-full border border-white/[0.04]" />
                 <Image
-                  src="/images/products/dragonfly-c.jpg"
+                  src="/images/products/dragonfly-c.png"
                   alt="CARACAL Isı Geri Kazanım"
                   fill
                   className="object-contain p-10 drop-shadow-2xl"

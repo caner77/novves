@@ -1,9 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 
+type FooterSectionsContent = {
+  products: string;
+  productsLinks: Record<string, string>;
+  solutions: string;
+  solutionsLinks: Record<string, string>;
+  corporate: string;
+  corporateLinks: Record<string, string>;
+  services: string;
+  servicesLinks: Record<string, string>;
+};
+
+type FooterContent = {
+  ctaTitle: string;
+  ctaDesc: string;
+  ctaButton: string;
+  brandDesc: string;
+  sections: FooterSectionsContent;
+};
+
+type CommonFooterDict = {
+  footer: FooterContent;
+};
+
 /* ── Build footer sections from dict ─────────────────────────────── */
 
-function buildFooterSections(dict: any) {
+function buildFooterSections(dict: CommonFooterDict) {
   const s = dict.footer.sections;
   return [
     {
@@ -94,22 +117,44 @@ const socialLinks = [
 ];
 
 const certificates = [
-  { src: "/images/certificates/TSE.png", alt: "TSE" },
-  { src: "/images/certificates/ISO9001.png", alt: "ISO 9001" },
+  { src: "/images/certificates/EN.png", alt: "EN" },
   { src: "/images/certificates/ISO14001.png", alt: "ISO 14001" },
   { src: "/images/certificates/CE.png", alt: "CE" },
-  { src: "/images/certificates/EN.png", alt: "EN" },
+  { src: "/images/certificates/ISO9001.png", alt: "ISO 9001" },
   { src: "/images/certificates/Efectis.png", alt: "Efectis" },
   { src: "/images/certificates/bsi.png", alt: "BSI" },
 ];
 
 /* ── Component ────────────────────────────────────────────────────── */
 
-export function Footer({ locale, dict }: { locale: string; dict: any }) {
+export function Footer({ locale, dict }: { locale: string; dict: CommonFooterDict }) {
   const footerSections = buildFooterSections(dict);
 
   return (
-    <footer className="relative overflow-hidden">
+    <>
+      <section className="bg-[#f8f9fa] py-12 sm:py-14">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-10 lg:flex-nowrap lg:justify-between">
+            {certificates.map((cert) => (
+              <a
+                key={cert.alt}
+                href={`/${locale}/kurumsal/sertifikalar`}
+                className="flex min-w-[110px] flex-1 items-center justify-center px-2 lg:min-w-0"
+              >
+                <Image
+                  src={cert.src}
+                  alt={cert.alt}
+                  width={180}
+                  height={72}
+                  className="h-10 w-auto max-w-full object-contain opacity-60 grayscale transition-all duration-300 hover:scale-[1.03] hover:opacity-100 hover:grayscale-0 sm:h-12"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="relative overflow-hidden">
       {/* ── Background layers ───────────────────────────────────── */}
       <div className="absolute inset-0">
         <Image
@@ -170,24 +215,6 @@ export function Footer({ locale, dict }: { locale: string; dict: any }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Certificates ────────────────────────────────────────── */}
-      <div className="relative z-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 border-b border-white/[0.06] py-8">
-            {certificates.map((cert) => (
-              <Image
-                key={cert.alt}
-                src={cert.src}
-                alt={cert.alt}
-                width={52}
-                height={52}
-                className="h-9 w-auto object-contain opacity-30 grayscale transition-all duration-500 hover:opacity-80 hover:grayscale-0"
-              />
-            ))}
           </div>
         </div>
       </div>
@@ -332,6 +359,27 @@ export function Footer({ locale, dict }: { locale: string; dict: any }) {
           </div>
         </div>
       </div>
-    </footer>
+
+      {/* ── Tasarloji Credit ──────────────────────────────────── */}
+      <div className="relative z-10 border-t border-white/[0.03]">
+        <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-3 sm:px-6 lg:px-8">
+          <span className="text-[10px] text-white/15">Web Development by</span>
+          <a
+            href="https://tasarloji.com"
+            target="_blank"
+            className="inline-block opacity-20 transition-opacity duration-300 hover:opacity-50"
+          >
+            <Image
+              src="/images/tasarloji-logo.png"
+              alt="Tasarloji"
+              width={80}
+              height={22}
+              className="h-4 w-auto"
+            />
+          </a>
+        </div>
+      </div>
+      </footer>
+    </>
   );
 }

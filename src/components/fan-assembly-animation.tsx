@@ -1,17 +1,9 @@
 "use client";
 
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 
-/* ═══════════════════════════════════════════════════════════
-   Fan Assembly Hero — Luxury Industrial
-
-   Left: scroll-driven video sequence (fan → housing)
-   Right: refined typography overlay that fades on scroll
-   Bottom: stats strip with staggered reveal
-   ═══════════════════════════════════════════════════════════ */
-
-const TOTAL_FRAMES = 250;
+const TOTAL_FRAMES = 211;
 
 function getFrameSrc(index: number): string {
   const num = String(Math.min(Math.max(index, 1), TOTAL_FRAMES)).padStart(4, "0");
@@ -26,6 +18,7 @@ type HeroDict = {
   subtitle: string;
   ctaPrimary: string;
   ctaSecondary: string;
+  heroLabel?: string;
   stats: { value: string; label: string }[];
   endCard: {
     series: string;
@@ -42,24 +35,109 @@ type HeroDict = {
   };
 };
 
-export function FanAssemblyAnimation({
-  dict,
-  locale,
-}: {
-  dict: HeroDict;
-  locale: string;
-}) {
+/* ═══════════════════════════════════════════════════════════
+   Mobile Hero — editorial, serif + mono, sand palette
+   ═══════════════════════════════════════════════════════════ */
+
+function MobileHero({ dict, locale }: { dict: HeroDict; locale: string }) {
+  return (
+    <section className="relative bg-sand-200 lg:hidden">
+      <div className="absolute inset-0 blueprint-grid-light opacity-60" />
+
+      <div className="relative">
+        {/* Top meta bar */}
+        <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3 font-mono-eng text-[10px] uppercase tracking-[0.2em] text-ink/55">
+          <span>[ 01 ] — Hero</span>
+          <span>{dict.heroLabel ?? dict.endCard.series}</span>
+        </div>
+
+        {/* Fan illustration */}
+        <div className="relative overflow-hidden" style={{ height: "54vh", minHeight: "340px" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/animation/frames/frame-0120.jpg"
+            alt={dict.endCard.title}
+            className="h-full w-full object-cover object-[65%_center]"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-sand-200 via-transparent to-transparent" />
+        </div>
+
+        {/* Copy block */}
+        <div className="relative px-5 pb-10 pt-8">
+          <p className="font-mono-eng text-[10px] uppercase tracking-[0.28em] text-primary">
+            ● {dict.badge}
+          </p>
+
+          <h1 className="mt-6">
+            <span className="block text-[18px] font-medium text-ink/55">
+              {dict.titleLine1}
+            </span>
+            <span className="font-display mt-2 block italic text-ink" style={{ fontSize: "clamp(3rem, 14vw, 5rem)", lineHeight: 0.95 }}>
+              {dict.titleLine2}
+            </span>
+            <span className="mt-2 block text-[22px] font-normal text-ink/75">
+              {dict.titleLine3}
+            </span>
+          </h1>
+
+          <p className="mt-7 max-w-md text-[14.5px] leading-[1.7] text-ink/70">
+            {dict.subtitle}
+          </p>
+
+          <div className="mt-9 flex flex-col gap-3">
+            <Link
+              href={`/${locale}/iletisim`}
+              className="group inline-flex w-full items-center justify-between rounded-none bg-ink px-6 py-4 text-[11px] font-medium uppercase tracking-[0.22em] text-sand-100 transition-all duration-300 hover:bg-primary"
+            >
+              <span>{dict.ctaPrimary}</span>
+              <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+            <Link
+              href={`/${locale}/urunler/hava-hareketi`}
+              className="group inline-flex w-full items-center justify-between border border-ink/15 px-6 py-4 text-[11px] font-medium uppercase tracking-[0.22em] text-ink/75 transition-all duration-300 hover:border-primary hover:text-primary"
+            >
+              <span>{dict.ctaSecondary}</span>
+              <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
+        {/* Stats band — industrial metadata strip */}
+        <div className="relative border-y border-ink/10 bg-sand-100">
+          <div className="grid grid-cols-2 divide-x divide-ink/10">
+            {dict.stats.map((s, i) => (
+              <div key={s.label} className={`px-5 py-5 ${i >= 2 ? "border-t border-ink/10" : ""}`}>
+                <p className="font-display text-[2.2rem] leading-none text-ink">{s.value}</p>
+                <p className="mt-2 font-mono-eng text-[9.5px] uppercase tracking-[0.2em] text-ink/55">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Desktop Hero — sticky scroll-driven fan assembly
+   ═══════════════════════════════════════════════════════════ */
+
+export function FanAssemblyAnimation({ dict, locale }: { dict: HeroDict; locale: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasWrapRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const endCardRef = useRef<HTMLDivElement>(null);
   const scrollHintRef = useRef<HTMLDivElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const currentFrameRef = useRef(0);
   const rafRef = useRef<number>(0);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => { setMounted(true); }, []);
 
   const preloadImages = useCallback(() => {
     const images: HTMLImageElement[] = [];
@@ -85,49 +163,61 @@ export function FanAssemblyAnimation({
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
+    if (typeof window === "undefined") return;
+    if (window.innerWidth < 1024) return;
 
     const images = preloadImages();
-    images[0].onload = () => renderFrame(0);
+    const first = images[0];
+    if (first.complete) renderFrame(0);
+    else first.onload = () => renderFrame(0);
 
     function onScroll() {
       rafRef.current = requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
+        const sectionEl = document.getElementById("hero-sticky-section");
+        if (!sectionEl) return;
+        const rect = sectionEl.getBoundingClientRect();
         const viewH = window.innerHeight;
-        const progress = Math.min(Math.max(scrollY / viewH, 0), 1);
+        const scrolled = -rect.top;
+        const scrollRange = sectionEl.offsetHeight - viewH;
+        const progress = Math.min(Math.max(scrolled / scrollRange, 0), 1);
 
-        /* Frame sequence */
         const frameIndex = Math.round(progress * (TOTAL_FRAMES - 1));
         if (frameIndex !== currentFrameRef.current) {
           currentFrameRef.current = frameIndex;
           renderFrame(frameIndex);
         }
 
-        /* Overlay fade — text disappears in first 40% of scroll */
-        const textFade = Math.max(1 - progress * 2.5, 0);
-        const textShift = progress * 60; // px upward
         if (overlayRef.current) {
-          overlayRef.current.style.opacity = String(textFade);
-          overlayRef.current.style.transform = `translateY(-${textShift}px)`;
+          const fade = Math.max(1 - progress * 2.2, 0);
+          overlayRef.current.style.opacity = String(fade);
+          overlayRef.current.style.transform = `translateY(-${progress * 40}px)`;
         }
-
-        /* Stats fade — disappears slightly later */
-        const statsFade = Math.max(1 - progress * 2, 0);
+        if (panelRef.current) {
+          // Right text panel slides fully off-screen by progress 0.85
+          const slideOut = Math.min(Math.max((progress - 0.55) / 0.3, 0), 1);
+          panelRef.current.style.transform = `translateX(${slideOut * 105}%)`;
+        }
         if (statsRef.current) {
-          statsRef.current.style.opacity = String(statsFade);
+          const fade = Math.max(1 - progress * 3.5, 0);
+          statsRef.current.style.opacity = String(fade);
         }
-
-        /* Scroll hint — hemen kaybolur */
         if (scrollHintRef.current) {
-          scrollHintRef.current.style.opacity = String(Math.max(1 - progress * 8, 0));
+          const fade = Math.max(1 - progress * 5, 0);
+          scrollHintRef.current.style.opacity = String(fade);
         }
-
-        /* End card — animasyon %80+ tamamlandığında soldan fade-in */
-        const endFade = Math.max((progress - 0.75) * 4, 0); // 0.75-1.0 arası 0→1
-        const endShift = Math.max(30 - endFade * 30, 0); // 30px soldan → 0
+        if (progressBarRef.current) {
+          progressBarRef.current.style.transform = `scaleY(${progress})`;
+        }
         if (endCardRef.current) {
+          const endFade = Math.max((progress - 0.72) * 4, 0);
           endCardRef.current.style.opacity = String(Math.min(endFade, 1));
-          endCardRef.current.style.transform = `translateX(-${endShift}px)`;
+          endCardRef.current.style.transform = `translateX(${Math.max(30 - endFade * 30, 0)}px)`;
+        }
+        if (canvasRef.current) {
+          // Fan: starts visible on LEFT (objectPosition 70%), ends visible on RIGHT (15%)
+          const shift = Math.min(Math.max((progress - 0.55) * 2.2, 0), 1);
+          const xPct = 70 - shift * 55; // 70 → 15
+          canvasRef.current.style.objectPosition = `${xPct}% center`;
         }
       });
     }
@@ -139,184 +229,178 @@ export function FanAssemblyAnimation({
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(rafRef.current);
     };
-  }, [mounted, preloadImages, renderFrame]);
+  }, [preloadImages, renderFrame]);
 
   return (
-    <div className="sticky top-0 h-screen w-full bg-black" style={{ zIndex: 0 }}>
-      {/* ── Video canvas ── */}
-      <div className="absolute inset-0 top-[85px] overflow-hidden">
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "60% center" }}
-        />
-      </div>
+    <>
+      <MobileHero dict={dict} locale={locale} />
 
-      {/* ── Right side overlay — typography + CTA ── */}
-      <div
-        ref={overlayRef}
-        className="pointer-events-none absolute inset-0 top-[85px] flex items-center justify-end overflow-hidden"
-        style={{ zIndex: 10 }}
-      >
-        <div className="pointer-events-auto mr-[8vw] max-w-[600px] pr-4 lg:mr-[12vw]" style={{ marginTop: "-8vh" }}>
-          {/* Accent line */}
-          <div className="mb-10 flex items-center gap-5">
-            <div className="h-px w-16 bg-primary/70" />
-            <span className="text-[11px] font-light uppercase tracking-[0.35em] text-white/35">
-              {dict.badge}
-            </span>
+      {/* Desktop sticky container wraps around the canvas; outer spacer elsewhere governs scroll range */}
+      <div id="hero-sticky-section" className="hidden lg:block" style={{ height: "200vh" }}>
+        <div className="sticky top-0 h-screen w-full overflow-hidden bg-sand-200">
+          {/* ── TWO-COLUMN GRID: LEFT = CONTENT, RIGHT = FAN ── */}
+
+          {/* Fan canvas — full width; objectPosition animates left→right on scroll */}
+          <div ref={canvasWrapRef} className="absolute top-[84px] bottom-0 inset-x-0 overflow-hidden">
+            <canvas
+              ref={canvasRef}
+              className="absolute inset-0 h-full w-full object-cover"
+              style={{ objectPosition: "70% center" }}
+            />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,transparent_28%,rgba(234,228,211,0.32)_88%)]" />
           </div>
 
-          {/* Headline */}
-          <h1 className="leading-[1.05]">
-            <span
-              className="block font-extralight uppercase tracking-[0.02em] text-white/90"
-              style={{ fontSize: "clamp(2.2rem, 3.8vw, 3.8rem)" }}
-            >
-              {dict.titleLine1}
-            </span>
-            <span
-              className="mt-1 block font-bold uppercase tracking-[-0.01em] text-white"
-              style={{ fontSize: "clamp(2.8rem, 5vw, 5rem)" }}
-            >
-              {dict.titleLine2}
-            </span>
-            <span
-              className="mt-1 block font-extralight uppercase tracking-[0.02em] text-primary/80"
-              style={{ fontSize: "clamp(2.2rem, 3.8vw, 3.8rem)" }}
-            >
-              {dict.titleLine3}
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="mt-7 max-w-md text-[14px] font-light leading-relaxed text-white/30">
-            {dict.subtitle}
-          </p>
-
-          {/* CTA */}
-          <div className="mt-12 flex items-center gap-6">
-            <Link
-              href={`/${locale}/iletisim`}
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/[0.15] px-10 py-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70 transition-all duration-500 hover:border-primary/40 hover:text-white"
-            >
-              <span className="relative z-10">{dict.ctaPrimary}</span>
-              <svg
-                className="relative z-10 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
-                fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-              <span className="absolute inset-0 -translate-x-full bg-primary/10 transition-transform duration-500 group-hover:translate-x-0" />
-            </Link>
-
-            <Link
-              href={`/${locale}/urunler/hava-hareketi`}
-              className="text-[11px] font-medium uppercase tracking-[0.15em] text-white/25 transition-colors duration-300 hover:text-white/60"
-            >
-              {dict.ctaSecondary}
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ── End card — animasyon bittikten sonra solda beliren ürün bilgisi ── */}
-      <div
-        ref={endCardRef}
-        className="pointer-events-none absolute left-0 top-[85px] bottom-0 flex items-center"
-        style={{ zIndex: 10, opacity: 0 }}
-      >
-        <div className="pointer-events-auto ml-[6vw] max-w-[500px] lg:ml-[8vw]">
-          {/* Accent */}
-          <div className="mb-8 flex items-center gap-5">
-            <div className="h-[2px] w-14 bg-primary" />
-            <span className="text-[12px] font-semibold uppercase tracking-[0.3em] text-primary">{dict.endCard.series}</span>
+          {/* RIGHT — Solid content panel (fades on scroll) */}
+          <div ref={panelRef} className="absolute top-[84px] bottom-0 right-0 w-[42%] bg-sand-200 z-10 will-change-transform">
+            <div className="absolute inset-0 blueprint-grid-light opacity-60 pointer-events-none" />
+            <div className="absolute inset-y-0 left-0 w-px bg-ink/10" />
+            {/* Soft left fade into canvas area */}
+            <div className="pointer-events-none absolute inset-y-0 -left-24 w-24 bg-gradient-to-r from-transparent to-sand-200" />
           </div>
 
-          <h2 className="text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {dict.endCard.title}
-          </h2>
-
-          <p className="mt-6 max-w-md text-[15px] font-light leading-[1.8] text-white/50">
-            {dict.endCard.desc}
-          </p>
-
-          <div className="mt-10 flex gap-0">
-            <div className="pr-8">
-              <p className="text-2xl font-bold text-white">{dict.endCard.spec1Value}</p>
-              <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">{dict.endCard.spec1Label}</p>
+          {/* Top hairline bar with section number (spans full width) */}
+          <div className="pointer-events-none absolute inset-x-0 top-[84px] z-30 flex items-center justify-between border-b border-ink/10 bg-sand-200/70 px-8 py-3 font-mono-eng text-[10px] uppercase tracking-[0.22em] text-ink/60 backdrop-blur-sm xl:px-16">
+            <div className="flex items-center gap-5">
+              <span className="text-primary">[ 01 ]</span>
+              <span>— Hero · Hava Hareketi</span>
             </div>
-            <div className="border-l border-white/[0.12] px-8">
-              <p className="text-2xl font-bold text-white">{dict.endCard.spec2Value}</p>
-              <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">{dict.endCard.spec2Label}</p>
-            </div>
-            <div className="border-l border-white/[0.12] pl-8">
-              <p className="text-2xl font-bold text-white">{dict.endCard.spec3Value}</p>
-              <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">{dict.endCard.spec3Label}</p>
+            <div className="flex items-center gap-5">
+              <span>{dict.heroLabel ?? dict.endCard.series}</span>
+              <span className="text-ink/35">|</span>
+              <span className="text-ink/50">EN 12101-3 · F400/2H</span>
             </div>
           </div>
 
-          <div className="mt-10">
-            <Link
-              href={`/${locale}/urunler/hava-hareketi`}
-              className="group inline-flex items-center gap-3 rounded-full border border-primary/30 px-8 py-3.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-primary transition-all duration-400 hover:border-primary hover:bg-primary/10 hover:text-white"
-            >
-              {dict.endCard.cta}
-              <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </div>
+          {/* Hero content — positioned inside RIGHT panel */}
+          <div ref={overlayRef} className="absolute top-[130px] bottom-[170px] right-0 w-[42%] z-20 flex items-center">
+            <div className="w-full pr-8 pl-10 xl:pr-16 xl:pl-14">
+              {/* Eyebrow */}
+              <p className="font-mono-eng text-[11px] uppercase tracking-[0.3em] text-primary">
+                ● {dict.badge}
+              </p>
 
-      {/* ── Scroll hint — mouse aşağı kaydır ── */}
-      <div
-        ref={scrollHintRef}
-        className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
-        style={{ zIndex: 15 }}
-      >
-        {/* Mouse outline */}
-        <div className="relative h-10 w-6 rounded-full border-2 border-white/20">
-          <div className="absolute left-1/2 top-2 h-2 w-0.5 -translate-x-1/2 animate-[scrollDot_1.8s_ease-in-out_infinite] rounded-full bg-white/60" />
-        </div>
-        <span className="text-[9px] font-light uppercase tracking-[0.3em] text-white/20">{dict.endCard.scroll}</span>
-
-        <style>{`
-          @keyframes scrollDot {
-            0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            50% { opacity: 0.3; transform: translateX(-50%) translateY(12px); }
-            100% { opacity: 1; transform: translateX(-50%) translateY(0); }
-          }
-        `}</style>
-      </div>
-
-      {/* ── Bottom stats strip ── */}
-      <div
-        ref={statsRef}
-        className="absolute bottom-0 left-0 right-0"
-        style={{ zIndex: 10 }}
-      >
-        <div className="border-t border-white/[0.08]">
-          <div className="mx-auto flex max-w-6xl items-stretch px-4">
-            {dict.stats.map((s, i) => (
-              <div
-                key={s.label}
-                className={`flex flex-1 flex-col items-center justify-center py-6 ${
-                  i < dict.stats.length - 1 ? "border-r border-white/[0.06]" : ""
-                }`}
-              >
-                <span className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-                  {s.value}
+              {/* Display title */}
+              <h1 className="mt-7">
+                <span className="block font-light text-ink/70" style={{ fontSize: "clamp(1.3rem, 1.6vw, 1.8rem)", letterSpacing: "-0.01em" }}>
+                  {dict.titleLine1}
                 </span>
-                <span className="mt-1.5 text-[11px] font-medium uppercase tracking-[0.15em] text-white/55">
-                  {s.label}
+                <span
+                  className="font-display mt-1 block italic text-ink"
+                  style={{
+                    fontSize: "clamp(3.8rem, 6.4vw, 7.6rem)",
+                    lineHeight: 0.93,
+                    letterSpacing: "-0.025em",
+                  }}
+                >
+                  {dict.titleLine2}
                 </span>
+                <span className="mt-1 block font-normal text-ink/85" style={{ fontSize: "clamp(1.4rem, 1.8vw, 2rem)", letterSpacing: "-0.015em" }}>
+                  {dict.titleLine3}
+                </span>
+              </h1>
+
+              <p className="mt-7 max-w-[42ch] text-[15px] leading-[1.7] text-ink/78">
+                {dict.subtitle}
+              </p>
+
+              {/* CTAs */}
+              <div className="mt-9 flex flex-wrap items-center gap-5">
+                <Link
+                  href={`/${locale}/iletisim`}
+                  className="group inline-flex items-center gap-3 bg-ink px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.24em] text-sand-100 transition-all duration-300 hover:bg-primary"
+                >
+                  <span>{dict.ctaPrimary}</span>
+                  <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <Link
+                  href={`/${locale}/urunler/hava-hareketi`}
+                  className="group inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-ink/80 transition-colors hover:text-primary"
+                >
+                  <span className="border-b border-ink/30 pb-1 transition-colors group-hover:border-primary">{dict.ctaSecondary}</span>
+                  <svg className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
-            ))}
+            </div>
           </div>
+
+          {/* Stats row — full width bottom strip */}
+          <div ref={statsRef} className="absolute bottom-0 left-0 right-0 z-20 bg-sand-100 border-t border-ink/15">
+            <div className="grid grid-cols-4 divide-x divide-ink/10">
+              {dict.stats.map((s) => (
+                <div key={s.label} className="px-6 py-5 xl:px-10">
+                  <p className="font-display text-[2.2rem] leading-none text-ink">{s.value}</p>
+                  <p className="mt-2 font-mono-eng text-[9.5px] uppercase tracking-[0.22em] text-ink/55">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* End-card — appears on scroll over the fan area */}
+          <div ref={endCardRef} className="pointer-events-none absolute inset-y-0 left-0 z-20 flex items-center" style={{ opacity: 0 }}>
+            <div className="pointer-events-auto ml-6 w-[min(440px,32vw)] xl:ml-14">
+              <div className="relative border border-ink/15 bg-sand-100 p-9 shadow-[0_40px_120px_-30px_rgba(10,14,20,0.35)] corner-mark text-ink">
+                <div className="absolute inset-0 blueprint-grid-light opacity-60 pointer-events-none" />
+
+                <div className="relative">
+                  <p className="font-mono-eng text-[10px] uppercase tracking-[0.24em] text-primary">
+                    ◆ {dict.endCard.series}
+                  </p>
+
+                  <h2 className="font-display mt-6 italic text-ink" style={{ fontSize: "clamp(2.4rem, 3.2vw, 3.6rem)", lineHeight: 0.95, letterSpacing: "-0.02em" }}>
+                    {dict.endCard.title}
+                  </h2>
+
+                  <p className="mt-5 max-w-[40ch] text-[13.5px] leading-[1.7] text-ink/72">
+                    {dict.endCard.desc}
+                  </p>
+
+                  <div className="mt-7 grid grid-cols-3 border-y border-ink/12 divide-x divide-ink/10">
+                    {[
+                      { v: dict.endCard.spec1Value, l: dict.endCard.spec1Label },
+                      { v: dict.endCard.spec2Value, l: dict.endCard.spec2Label },
+                      { v: dict.endCard.spec3Value, l: dict.endCard.spec3Label },
+                    ].map((s) => (
+                      <div key={s.l} className="py-4 pl-4 first:pl-0">
+                        <p className="font-display text-[1.8rem] leading-none text-ink">{s.v}</p>
+                        <p className="mt-1.5 font-mono-eng text-[9px] uppercase tracking-[0.2em] text-ink/55">{s.l}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    href={`/${locale}/urunler/hava-hareketi`}
+                    className="group mt-7 inline-flex items-center gap-3 bg-ink px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] text-sand-100 transition-all duration-300 hover:bg-primary"
+                  >
+                    {dict.endCard.cta}
+                    <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right side — vertical progress bar with label */}
+          <div className="absolute right-5 top-[18%] bottom-[18%] z-15 flex items-center pointer-events-none xl:right-8">
+            <span
+              className="absolute -left-14 top-1/2 font-mono-eng text-[10px] uppercase tracking-[0.3em] text-ink/40"
+              style={{ writingMode: "vertical-rl", transform: "rotate(180deg) translateX(50%)" }}
+            >
+              Scroll · Discover
+            </span>
+            <div className="relative h-full" style={{ width: "1px" }}>
+              <div className="h-full w-full bg-ink/15" />
+              <div ref={progressBarRef} className="absolute inset-0 origin-top bg-primary" style={{ transform: "scaleY(0)" }} />
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+    </>
   );
 }

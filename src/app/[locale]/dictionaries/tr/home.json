@@ -41,7 +41,7 @@
           "label": "Hassas Hesaplama"
         },
         {
-          "desc": "Standart çözümlere sığmıyor; mimari estetiği bozmuyor, teknik şartnamelere tam uyumlu özel sistemler tasarlıyoruz.",
+          "desc": "Teknik şartnamelere tam uyumlu ürünler üretiyoruz.",
           "label": "Proje Odaklılık"
         }
       ],
@@ -163,16 +163,16 @@
     "badge": "Profesyonel Havalandırma Çözümleri",
     "stats": [
       {
-        "label": "Ürün Çeşidi",
-        "value": "1.200+"
+        "label": "Ürün Varyasyonu",
+        "value": "7.000+"
       },
       {
         "label": "Tamamlanan Proje",
-        "value": "113+"
+        "value": "500+"
       },
       {
         "label": "Ülkeye İhracat",
-        "value": "18+"
+        "value": "30+"
       },
       {
         "label": "Teknik Destek",
@@ -182,11 +182,11 @@
     "endCard": {
       "cta": "Ürünü İncele",
       "desc": "EN 12101-3 sertifikalı, F400/2H yangın dayanımlı aksiyal hücreli fan. Yüksek debi kapasitesi ve düşük ses seviyesi ile endüstriyel havalandırmada üstün performans.",
-      "title": "Aksiyal Hücreli Fan",
+      "title": "Hücreli Aksiyal Fan",
       "scroll": "Scroll",
       "series": "HOUND SERİSİ",
       "spec1Label": "Yangın Sınıfı",
-      "spec1Value": "F400",
+      "spec1Value": "F300/F400",
       "spec2Label": "Dayanım",
       "spec2Value": "2H",
       "spec3Label": "Sertifika",

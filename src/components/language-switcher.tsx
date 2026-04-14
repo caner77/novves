@@ -9,7 +9,13 @@ const localeConfig = {
   ru: { label: "Русский", flag: "🇷🇺", short: "RU" },
 } as const;
 
-export function LanguageSwitcher({ locale }: { locale: string }) {
+export function LanguageSwitcher({
+  locale,
+  inverted = false,
+}: {
+  locale: string;
+  inverted?: boolean;
+}) {
   const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -39,12 +45,18 @@ export function LanguageSwitcher({ locale }: { locale: string }) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 px-3 py-1.5 text-[12px] font-medium text-white/60 transition-all duration-150 hover:border-white/30 hover:text-white"
+        className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-[12px] font-medium transition-all duration-150 ${
+          inverted
+            ? "border-white/10 bg-white/[0.03] text-white/72 hover:border-white/20 hover:text-white"
+            : "border-secondary/15 text-secondary/60 hover:border-primary/30 hover:text-dark"
+        }`}
       >
         <span className="text-base leading-none">{current.flag}</span>
         <span>{current.short}</span>
         <svg
-          className={`h-3 w-3 text-white/30 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-3 w-3 transition-transform duration-200 ${
+            inverted ? "text-white/38" : "text-secondary/30"
+          } ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2.5}

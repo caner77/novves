@@ -3,13 +3,6 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 
-/* ═══════════════════════════════════════════════════════════
-   Scroll Video Section — Reusable scroll-driven frame animation
-
-   Heroya benzer mantık: sticky canvas, scroll ile frame ilerler.
-   Başta solda yazılar fade-in, sonda sağda ürün kartı çıkar.
-   ═══════════════════════════════════════════════════════════ */
-
 type StartCard = {
   badge: string;
   titleLine1: string;
@@ -39,6 +32,8 @@ export function ScrollVideoSection({
   endCard,
   locale,
   productHref,
+  sideLabel,
+  sectionNumber = "02",
 }: {
   framesPath: string;
   totalFrames: number;
@@ -47,10 +42,14 @@ export function ScrollVideoSection({
   endCard?: EndCard;
   locale?: string;
   productHref?: string;
+  sideLabel?: string;
+  sectionNumber?: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const startCardRef = useRef<HTMLDivElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
   const endCardRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const currentFrameRef = useRef(0);
@@ -87,7 +86,9 @@ export function ScrollVideoSection({
     if (!mounted) return;
 
     const images = preloadImages();
-    images[0].onload = () => renderFrame(0);
+    const first = images[0];
+    if (first.complete) renderFrame(0);
+    else first.onload = () => renderFrame(0);
 
     function onScroll() {
       rafRef.current = requestAnimationFrame(() => {
@@ -96,7 +97,6 @@ export function ScrollVideoSection({
 
         const rect = container.getBoundingClientRect();
         const viewH = window.innerHeight;
-
         const scrolled = -rect.top;
         const scrollRange = container.offsetHeight - viewH;
         const progress = Math.min(Math.max(scrolled / scrollRange, 0), 1);
@@ -107,20 +107,34 @@ export function ScrollVideoSection({
           renderFrame(frameIndex);
         }
 
-        /* Start card — sol taraf: ilk %40'ta görünür, sonra solar */
         if (startCardRef.current) {
-          const startFade = Math.max(1 - progress * 2.5, 0);
-          const startShift = progress * 60;
-          startCardRef.current.style.opacity = String(startFade);
-          startCardRef.current.style.transform = `translateY(-${startShift}px)`;
+          const fade = Math.max(1 - progress * 2.4, 0);
+          startCardRef.current.style.opacity = String(fade);
+          startCardRef.current.style.transform = `translateY(-${progress * 30}px)`;
         }
 
-        /* End card — sağ taraf: %75+ tamamlandığında sağdan fade-in */
+        if (panelRef.current) {
+          // Left ink panel slides fully off-screen left by progress 0.85
+          const slideOut = Math.min(Math.max((progress - 0.55) / 0.3, 0), 1);
+          panelRef.current.style.transform = `translateX(-${slideOut * 105}%)`;
+        }
+
+        if (canvasRef.current) {
+          // Fan: starts visible RIGHT (70%), ends visible LEFT (15%) — mirror of hero
+          const shift = Math.min(Math.max((progress - 0.55) * 2.2, 0), 1);
+          const xPct = 70 - shift * 55;
+          canvasRef.current.style.objectPosition = `${xPct}% center`;
+        }
+
+        if (progressBarRef.current) {
+          progressBarRef.current.style.transform = `scaleY(${progress})`;
+        }
+
         if (endCardRef.current) {
-          const endFade = Math.max((progress - 0.75) * 4, 0);
-          const endShift = Math.max(30 - endFade * 30, 0);
-          endCardRef.current.style.opacity = String(Math.min(endFade, 1));
-          endCardRef.current.style.transform = `translateX(${endShift}px)`;
+          const fade = Math.max((progress - 0.72) * 4, 0);
+          const shift = Math.max(40 - fade * 40, 0);
+          endCardRef.current.style.opacity = String(Math.min(fade, 1));
+          endCardRef.current.style.transform = `translateX(${shift}px)`;
         }
       });
     }
@@ -135,119 +149,153 @@ export function ScrollVideoSection({
   }, [mounted, preloadImages, renderFrame, totalFrames]);
 
   return (
-    <div ref={containerRef} id={id} className="relative h-[300vh] bg-black">
-      {/* Sticky canvas — container scroll edilirken sabit kalır */}
+    <div
+      ref={containerRef}
+      id={id}
+      className="relative bg-sand-200"
+      style={{ height: "260vh" }}
+    >
       <div className="sticky top-0 h-screen w-full overflow-hidden">
+        {/* Canvas — fan visible on right side */}
         <canvas
           ref={canvasRef}
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center center" }}
+          style={{ objectPosition: "70% center" }}
         />
 
-        {/* ── Start card — sol tarafta başlangıç yazıları ── */}
+        {/* LEFT — Solid sand panel for text readability (slides off at end) */}
+        <div ref={panelRef} className="absolute top-0 bottom-0 left-0 w-[42%] bg-sand-200 z-10 will-change-transform">
+          <div className="absolute inset-0 blueprint-grid-light opacity-60 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-px bg-ink/10" />
+          {/* Soft right-edge fade into canvas area */}
+          <div className="pointer-events-none absolute inset-y-0 -right-24 w-24 bg-gradient-to-l from-transparent to-sand-200" />
+        </div>
+
+        {/* Top hairline — section meta */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center justify-between border-b border-ink/10 bg-sand-200/70 px-8 py-3 font-mono-eng text-[10px] uppercase tracking-[0.22em] text-ink/60 backdrop-blur-sm xl:px-16">
+          <div className="flex items-center gap-5">
+            <span className="text-primary">[ {sectionNumber} ]</span>
+            <span>— {sideLabel ?? "Scroll Sequence"}</span>
+          </div>
+          {endCard && (
+            <div className="flex items-center gap-5">
+              <span>{endCard.series}</span>
+              <span className="text-ink/30">|</span>
+              <span className="text-ink/55">{endCard.spec1Value} · {endCard.spec3Value}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Right-side progress rail */}
+        {sideLabel && (
+          <div className="absolute right-5 top-[18%] bottom-[18%] z-15 flex items-center pointer-events-none xl:right-8">
+            <span
+              className="absolute -left-14 top-1/2 font-mono-eng text-[10px] uppercase tracking-[0.3em] text-ink/45"
+              style={{ writingMode: "vertical-rl", transform: "rotate(180deg) translateX(50%)" }}
+            >
+              {sideLabel}
+            </span>
+            <div className="relative h-full" style={{ width: "1px" }}>
+              <div className="h-full w-full bg-ink/20" />
+              <div
+                ref={progressBarRef}
+                className="absolute inset-0 origin-top bg-primary"
+                style={{ transform: "scaleY(0)" }}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* START CARD — sits inside left ink panel */}
         {startCard && (
           <div
             ref={startCardRef}
-            className="pointer-events-none absolute inset-0 flex items-center"
-            style={{ zIndex: 10 }}
+            className="absolute top-[130px] bottom-[40px] left-0 w-[42%] z-20 flex items-center"
           >
-            <div className="pointer-events-auto ml-[6vw] max-w-[550px] lg:ml-[8vw]">
-              {/* Accent line */}
-              <div className="mb-10 flex items-center gap-5">
-                <div className="h-px w-16 bg-primary/70" />
-                <span className="text-[11px] font-light uppercase tracking-[0.35em] text-white/35">
-                  {startCard.badge}
-                </span>
-              </div>
+            <div className="w-full pl-8 pr-10 xl:pl-16 xl:pr-14">
+              <p className="font-mono-eng text-[11px] uppercase tracking-[0.32em] text-primary">
+                ● {startCard.badge}
+              </p>
 
-              {/* Headline */}
-              <h2 className="leading-[1.05]">
-                <span
-                  className="block font-extralight uppercase tracking-[0.02em] text-white/90"
-                  style={{ fontSize: "clamp(2.2rem, 3.8vw, 3.8rem)" }}
-                >
+              <h2 className="mt-7">
+                <span className="block font-light text-ink/70" style={{ fontSize: "clamp(1.3rem, 1.6vw, 1.8rem)", letterSpacing: "-0.01em" }}>
                   {startCard.titleLine1}
                 </span>
                 <span
-                  className="mt-1 block font-bold uppercase tracking-[-0.01em] text-white"
-                  style={{ fontSize: "clamp(2.8rem, 5vw, 5rem)" }}
+                  className="font-display mt-1 block italic text-ink"
+                  style={{
+                    fontSize: "clamp(3.6rem, 6vw, 7.2rem)",
+                    lineHeight: 0.94,
+                    letterSpacing: "-0.025em",
+                  }}
                 >
                   {startCard.titleLine2}
                 </span>
-                <span
-                  className="mt-1 block font-extralight uppercase tracking-[0.02em] text-primary/80"
-                  style={{ fontSize: "clamp(2.2rem, 3.8vw, 3.8rem)" }}
-                >
+                <span className="mt-1 block font-normal text-ink/85" style={{ fontSize: "clamp(1.4rem, 1.8vw, 2rem)", letterSpacing: "-0.015em" }}>
                   {startCard.titleLine3}
                 </span>
               </h2>
 
-              {/* Subtitle */}
-              <p className="mt-7 max-w-md text-[14px] font-light leading-relaxed text-white/30">
+              <p className="mt-7 max-w-[42ch] text-[15px] leading-[1.7] text-ink/78">
                 {startCard.subtitle}
               </p>
             </div>
           </div>
         )}
 
-        {/* ── End card — sağ tarafta ürün bilgisi ── */}
+        {/* END CARD — right, sand on ink, editorial */}
         {endCard && (
           <div
             ref={endCardRef}
-            className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center"
-            style={{ zIndex: 10, opacity: 0 }}
+            className="pointer-events-none absolute inset-y-0 right-0 z-20 flex items-center pt-[130px]"
+            style={{ opacity: 0 }}
           >
-            <div className="pointer-events-auto mr-[6vw] max-w-[500px] lg:mr-[8vw]">
-              {/* Accent */}
-              <div className="mb-8 flex items-center gap-5">
-                <div className="h-[2px] w-14 bg-primary" />
-                <span className="text-[12px] font-semibold uppercase tracking-[0.3em] text-primary">
-                  {endCard.series}
-                </span>
-              </div>
+            <div className="pointer-events-auto mr-6 w-[min(480px,36vw)] xl:mr-14">
+              <div className="relative border border-white/15 bg-sand-100 p-9 shadow-[0_40px_120px_-30px_rgba(0,0,0,0.55)] corner-mark text-ink">
+                <div className="absolute inset-0 blueprint-grid-light opacity-60 pointer-events-none" />
 
-              <h2 className="text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl lg:text-6xl">
-                {endCard.title}
-              </h2>
-
-              <p className="mt-6 max-w-md text-[15px] font-light leading-[1.8] text-white/50">
-                {endCard.desc}
-              </p>
-
-              <div className="mt-10 flex gap-0">
-                <div className="pr-8">
-                  <p className="text-2xl font-bold text-white">{endCard.spec1Value}</p>
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">
-                    {endCard.spec1Label}
+                <div className="relative">
+                  <p className="font-mono-eng text-[10px] uppercase tracking-[0.24em] text-primary">
+                    ◆ {endCard.series}
                   </p>
-                </div>
-                <div className="border-l border-white/[0.12] px-8">
-                  <p className="text-2xl font-bold text-white">{endCard.spec2Value}</p>
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">
-                    {endCard.spec2Label}
-                  </p>
-                </div>
-                <div className="border-l border-white/[0.12] pl-8">
-                  <p className="text-2xl font-bold text-white">{endCard.spec3Value}</p>
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">
-                    {endCard.spec3Label}
-                  </p>
-                </div>
-              </div>
 
-              {locale && productHref && (
-                <div className="mt-10">
-                  <Link
-                    href={`/${locale}${productHref}`}
-                    className="group inline-flex items-center gap-3 rounded-full border border-primary/30 px-8 py-3.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-primary transition-all duration-400 hover:border-primary hover:bg-primary/10 hover:text-white"
+                  <h3
+                    className="font-display mt-6 italic text-ink"
+                    style={{ fontSize: "clamp(2.4rem, 3.2vw, 3.6rem)", lineHeight: 0.95, letterSpacing: "-0.02em" }}
                   >
-                    {endCard.cta}
-                    <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </Link>
+                    {endCard.title}
+                  </h3>
+
+                  <p className="mt-5 max-w-[40ch] text-[13.5px] leading-[1.7] text-ink/72">
+                    {endCard.desc}
+                  </p>
+
+                  <div className="mt-7 grid grid-cols-3 border-y border-ink/12 divide-x divide-ink/10">
+                    {[
+                      { v: endCard.spec1Value, l: endCard.spec1Label },
+                      { v: endCard.spec2Value, l: endCard.spec2Label },
+                      { v: endCard.spec3Value, l: endCard.spec3Label },
+                    ].map((s) => (
+                      <div key={s.l} className="py-4 pl-4 first:pl-0">
+                        <p className="font-display text-[1.8rem] leading-none text-ink">{s.v}</p>
+                        <p className="mt-1.5 font-mono-eng text-[9px] uppercase tracking-[0.2em] text-ink/55">{s.l}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {locale && productHref && (
+                    <Link
+                      href={`/${locale}${productHref}`}
+                      className="group mt-7 inline-flex items-center gap-3 bg-ink px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] text-sand-100 transition-all duration-300 hover:bg-primary"
+                    >
+                      {endCard.cta}
+                      <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                  )}
                 </div>
-              )}
+              </div>
             </div>
           </div>
         )}

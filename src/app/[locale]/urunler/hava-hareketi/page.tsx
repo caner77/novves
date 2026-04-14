@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 const productImages: Record<string, string> = {
-  DRAGONFLY: "/images/products/dragonfly-c.jpg",
-  MARLIN: "/images/products/marlin.jpg",
+  DRAGONFLY: "/images/products/dragonfly-c.png",
+  MARLIN: "/images/products/marlin.png",
   BEAR: "/images/products/bear-reb.jpg",
   NAUTILUS: "/images/products/nautilus-cif-cidarli.jpg",
   HUMMINGBIRD: "/images/products/hummingbird-drb-ec.jpg",

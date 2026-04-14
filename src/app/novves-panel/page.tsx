@@ -9,25 +9,25 @@ const SHOWCASE_PRODUCTS = [
     name: "DRAGONFLY-C",
     category: "Aksiyal Jet Fan",
     spec: "F300 / 2H",
-    image: "/images/products/dragonfly-c.jpg",
+    image: "/images/products/dragonfly-c.png",
   },
   {
     name: "MARLIN",
     category: "Jet Fan",
     spec: "F400 / 2H",
-    image: "/images/products/marlin.jpg",
+    image: "/images/products/marlin.png",
   },
   {
     name: "TIGER-PRE",
     category: "Radyal Fan",
     spec: "EN 12101-3",
-    image: "/images/products/tiger-pre.jpg",
+    image: "/images/products/tiger-pre.png",
   },
   {
     name: "DOLPHIN-PRE",
     category: "Çatı Fanı",
     spec: "F300 / 120°",
-    image: "/images/products/dolphin-pre.jpg",
+    image: "/images/products/dolphin-pre.png",
   },
 ];
 
