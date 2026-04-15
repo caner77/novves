@@ -17,6 +17,9 @@ type FooterContent = {
   ctaDesc: string;
   ctaButton: string;
   brandDesc: string;
+  copyright: string;
+  kvkk: string;
+  privacyPolicy: string;
   sections: FooterSectionsContent;
 };
 

@@ -170,7 +170,7 @@ function SectionHead({
       </div>
 
       <div className="mt-8 grid gap-10 lg:grid-cols-12">
-        <h2 className={`font-display italic ${textTitle} lg:col-span-8`} style={{ fontSize: "clamp(2.5rem, 4.4vw, 5rem)", lineHeight: 0.98, letterSpacing: "-0.02em" }}>
+        <h2 className={`font-bold ${textTitle} lg:col-span-8`} style={{ fontSize: "clamp(2.5rem, 4.4vw, 5rem)", lineHeight: 0.98, letterSpacing: "-0.02em" }}>
           {title}
         </h2>
         {subtitle && (
@@ -253,7 +253,7 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
 
                 {/* Copy */}
                 <div className="flex flex-1 flex-col border-t border-ink/12 p-7 lg:p-9">
-                  <h3 className="font-display italic text-ink" style={{ fontSize: "clamp(1.7rem, 2.2vw, 2.4rem)", lineHeight: 1.02, letterSpacing: "-0.02em" }}>
+                  <h3 className="font-bold text-ink" style={{ fontSize: "clamp(1.7rem, 2.2vw, 2.4rem)", lineHeight: 1.02, letterSpacing: "-0.02em" }}>
                     {pillar.title}
                   </h3>
                   <p className="mt-4 text-[14px] leading-[1.7] text-ink/70">{pillar.intro}</p>
@@ -336,7 +336,7 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
 
                       <div className="mt-auto pt-10">
                         <h3
-                          className="font-display italic text-ink"
+                          className="font-bold text-ink"
                           style={{
                             fontSize: isFeature ? "clamp(2.4rem, 3.2vw, 3.8rem)" : "clamp(1.5rem, 1.9vw, 2.1rem)",
                             lineHeight: 0.98,
@@ -366,7 +366,7 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
                           sizes={isFeature ? "(max-width: 1024px) 100vw, 56vw" : "(max-width: 1024px) 100vw, 33vw"}
                         />
                       ) : (
-                        <div className="absolute inset-0 flex items-center justify-center font-display italic text-ink/20" style={{ fontSize: "clamp(3rem, 5vw, 5rem)" }}>
+                        <div className="absolute inset-0 flex items-center justify-center font-bold text-ink/20" style={{ fontSize: "clamp(3rem, 5vw, 5rem)" }}>
                           {String(index + 1).padStart(2, "0")}
                         </div>
                       )}
@@ -439,7 +439,7 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
               <div className="grid grid-cols-2 divide-x divide-white/10 border-y border-white/15">
                 {dict.hero.stats.slice(0, 4).map((stat, i) => (
                   <div key={stat.label} className={`px-4 py-5 ${i >= 2 ? "border-t border-white/10" : ""}`}>
-                    <p className="font-display text-[2rem] leading-none text-white">{stat.value}</p>
+                    <p className="font-bold text-[2rem] leading-none text-white">{stat.value}</p>
                     <p className="mt-2 font-mono-eng text-[9.5px] uppercase tracking-[0.2em] text-white/55">{stat.label}</p>
                   </div>
                 ))}
@@ -497,7 +497,7 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
                 <p className="font-mono-eng text-[10px] uppercase tracking-[0.22em] text-primary">
                   ◆ {dict.social.tag}
                 </p>
-                <h3 className="font-display mt-4 italic text-ink" style={{ fontSize: "clamp(1.8rem, 2.3vw, 2.4rem)", lineHeight: 1, letterSpacing: "-0.02em" }}>
+                <h3 className="font-bold mt-4 text-ink" style={{ fontSize: "clamp(1.8rem, 2.3vw, 2.4rem)", lineHeight: 1, letterSpacing: "-0.02em" }}>
                   {dict.social.title}
                 </h3>
                 <div className="mt-6 flex flex-wrap gap-0 border border-ink/15">
@@ -524,7 +524,7 @@ export default function HomeClient({ dict, locale }: { dict: HomeDict; locale: s
                   <p className="font-mono-eng text-[10px] uppercase tracking-[0.28em] text-primary">
                     ● {dict.finalCta.tag}
                   </p>
-                  <h3 className="font-display mt-5 italic text-white" style={{ fontSize: "clamp(2rem, 2.8vw, 2.8rem)", lineHeight: 0.98, letterSpacing: "-0.02em" }}>
+                  <h3 className="font-bold mt-5 text-white" style={{ fontSize: "clamp(2rem, 2.8vw, 2.8rem)", lineHeight: 0.98, letterSpacing: "-0.02em" }}>
                     {dict.finalCta.title}
                   </h3>
                   <p className="mt-5 text-[14px] leading-[1.7] text-white/70">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { CookieConsent } from "@/components/cookie-consent";
 import { hasLocale, getDictionary } from "./dictionaries";
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default async function LocaleLayout({
         <Navbar locale={locale} dict={dict.common} />
         <div className="flex-1">{children}</div>
         <Footer locale={locale} dict={dict.common} />
+        <CookieConsent locale={locale} />
       </body>
     </html>
   );

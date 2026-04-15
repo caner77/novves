@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 type StartCard = {
@@ -61,7 +62,7 @@ export function ScrollVideoSection({
   const preloadImages = useCallback(() => {
     const images: HTMLImageElement[] = [];
     for (let i = 1; i <= totalFrames; i++) {
-      const img = new Image();
+      const img = new window.Image();
       const num = String(i).padStart(4, "0");
       img.src = `${framesPath}/frame-${num}.jpg`;
       images.push(img);
@@ -149,12 +150,26 @@ export function ScrollVideoSection({
   }, [mounted, preloadImages, renderFrame, totalFrames]);
 
   return (
-    <div
-      ref={containerRef}
-      id={id}
-      className="relative bg-sand-200"
-      style={{ height: "260vh" }}
-    >
+    <>
+      {/* ── Mobile version ── */}
+      <MobileScrollSection
+        framesPath={framesPath}
+        totalFrames={totalFrames}
+        startCard={startCard}
+        endCard={endCard}
+        locale={locale}
+        productHref={productHref}
+        sideLabel={sideLabel}
+        sectionNumber={sectionNumber}
+      />
+
+      {/* ── Desktop version (lg+) ── */}
+      <div
+        ref={containerRef}
+        id={id}
+        className="relative bg-sand-200 hidden lg:block"
+        style={{ height: "260vh" }}
+      >
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Canvas — fan visible on right side */}
         <canvas
@@ -222,10 +237,10 @@ export function ScrollVideoSection({
                   {startCard.titleLine1}
                 </span>
                 <span
-                  className="font-display mt-1 block italic text-ink"
+                  className="mt-1 block font-bold text-ink break-words"
                   style={{
-                    fontSize: "clamp(3.6rem, 6vw, 7.2rem)",
-                    lineHeight: 0.94,
+                    fontSize: "clamp(2.6rem, 4.4vw, 5.6rem)",
+                    lineHeight: 1.05,
                     letterSpacing: "-0.025em",
                   }}
                 >
@@ -260,7 +275,7 @@ export function ScrollVideoSection({
                   </p>
 
                   <h3
-                    className="font-display mt-6 italic text-ink"
+                    className="font-bold mt-6 text-ink"
                     style={{ fontSize: "clamp(2.4rem, 3.2vw, 3.6rem)", lineHeight: 0.95, letterSpacing: "-0.02em" }}
                   >
                     {endCard.title}
@@ -277,7 +292,7 @@ export function ScrollVideoSection({
                       { v: endCard.spec3Value, l: endCard.spec3Label },
                     ].map((s) => (
                       <div key={s.l} className="py-4 pl-4 first:pl-0">
-                        <p className="font-display text-[1.8rem] leading-none text-ink">{s.v}</p>
+                        <p className="font-bold text-[1.8rem] leading-none text-ink">{s.v}</p>
                         <p className="mt-1.5 font-mono-eng text-[9px] uppercase tracking-[0.2em] text-ink/55">{s.l}</p>
                       </div>
                     ))}
@@ -301,5 +316,176 @@ export function ScrollVideoSection({
         )}
       </div>
     </div>
+    </>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Mobile — autoplay animation + stacked content
+   ═══════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════
+   Mobile — Editorial product card, no animation
+   ═══════════════════════════════════════════════════════════ */
+
+function MobileScrollSection({
+  framesPath,
+  totalFrames,
+  startCard,
+  endCard,
+  locale,
+  productHref,
+  sideLabel,
+  sectionNumber = "02",
+}: {
+  framesPath: string;
+  totalFrames: number;
+  startCard?: StartCard;
+  endCard?: EndCard;
+  locale?: string;
+  productHref?: string;
+  sideLabel?: string;
+  sectionNumber?: string;
+}) {
+  // Use the last available frame as static hero image
+  const finalFrameSrc = `${framesPath}/frame-${String(totalFrames).padStart(4, "0")}.jpg`;
+
+  return (
+    <section className="relative bg-sand-200 lg:hidden">
+      {/* Top meta */}
+      <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3 font-mono-eng text-[10px] uppercase tracking-[0.22em] text-ink/55">
+        <div className="flex items-center gap-3">
+          <span className="text-primary">[ {sectionNumber} ]</span>
+          <span>— {sideLabel ?? "Sequence"}</span>
+        </div>
+        {endCard && <span className="truncate pl-3 text-ink/45">{endCard.series}</span>}
+      </div>
+
+      {/* Start copy */}
+      {startCard && (
+        <div className="px-5 pb-9 pt-9">
+          <div className="flex items-center gap-3">
+            <span className="h-px w-6 bg-primary" />
+            <span className="font-mono-eng text-[10px] uppercase tracking-[0.28em] text-primary">
+              {startCard.badge}
+            </span>
+          </div>
+
+          <h2 className="mt-6">
+            <span className="block text-[17px] font-medium text-ink/55">{startCard.titleLine1}</span>
+            <span
+              className="mt-2 block font-bold text-ink break-words"
+              style={{ fontSize: "clamp(2.2rem, 10vw, 3.8rem)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
+            >
+              {startCard.titleLine2}
+            </span>
+            <span className="mt-2 block text-[19px] font-normal text-ink/75">{startCard.titleLine3}</span>
+          </h2>
+
+          <p className="mt-6 text-[14.5px] leading-[1.65] text-ink/70">{startCard.subtitle}</p>
+        </div>
+      )}
+
+      {/* Featured product card */}
+      {endCard && (
+        <div className="px-5 pb-2">
+          {locale && productHref ? (
+            <Link href={`/${locale}${productHref}`} className="group block">
+              <ProductCard endCard={endCard} imageSrc={finalFrameSrc} />
+            </Link>
+          ) : (
+            <div className="block">
+              <ProductCard endCard={endCard} imageSrc={finalFrameSrc} />
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Inline CTA */}
+      {endCard && locale && productHref && (
+        <div className="mt-6 px-5 pb-12">
+          <Link
+            href={`/${locale}${productHref}`}
+            className="group inline-flex w-full items-center justify-between bg-ink px-6 py-4 text-[11px] font-medium uppercase tracking-[0.22em] text-sand-100 transition-all duration-300 hover:bg-primary"
+          >
+            <span>{endCard.cta}</span>
+            <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function ProductCard({ endCard, imageSrc }: { endCard: EndCard; imageSrc: string }) {
+  return (
+    <article className="relative overflow-hidden border border-ink/12 bg-white">
+      {/* Corner marks */}
+      <div className="pointer-events-none absolute left-0 top-0 h-3 w-3 border-l border-t border-ink/35 z-20" />
+      <div className="pointer-events-none absolute right-0 top-0 h-3 w-3 border-r border-t border-ink/35 z-20" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-3 w-3 border-b border-l border-ink/35 z-20" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-3 w-3 border-b border-r border-ink/35 z-20" />
+
+      <div className="relative aspect-[5/4] w-full bg-sand-200">
+        {/* Series badge */}
+        <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 bg-ink/85 px-2.5 py-1 font-mono-eng text-[9px] uppercase tracking-[0.22em] text-sand-100 backdrop-blur-sm">
+          <span className="text-primary">◆</span> {endCard.series}
+        </div>
+        <div className="absolute right-4 top-4 z-10 inline-flex items-center gap-1.5 border border-ink/15 bg-white/90 px-2.5 py-1 font-mono-eng text-[9px] uppercase tracking-[0.22em] text-ink/65 backdrop-blur-sm">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> {endCard.spec3Value}
+        </div>
+
+        <Image
+          src={imageSrc}
+          alt={endCard.title}
+          fill
+          sizes="100vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+          style={{ objectPosition: "center center", filter: "contrast(1.05) saturate(1.08)" }}
+        />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white/95 via-white/60 to-transparent" />
+
+        <div className="absolute inset-x-0 bottom-0 p-4">
+          <p className="font-mono-eng text-[10px] uppercase tracking-[0.22em] text-ink/55">
+            Featured Product
+          </p>
+          <h3 className="mt-1 font-bold text-ink" style={{ fontSize: "1.5rem", lineHeight: 1.1, letterSpacing: "-0.015em" }}>
+            {endCard.title}
+          </h3>
+        </div>
+      </div>
+
+      {/* Description */}
+      <div className="border-t border-ink/10 px-5 py-4">
+        <p className="text-[13px] leading-[1.65] text-ink/70">{endCard.desc}</p>
+      </div>
+
+      {/* Specs */}
+      <div className="grid grid-cols-3 divide-x divide-ink/10 border-t border-ink/10">
+        {[
+          { v: endCard.spec1Value, l: endCard.spec1Label },
+          { v: endCard.spec2Value, l: endCard.spec2Label },
+          { v: endCard.spec3Value, l: endCard.spec3Label },
+        ].map((s) => (
+          <div key={s.l} className="px-3 py-3.5 text-center">
+            <p className="font-bold text-[1.05rem] leading-none text-ink">{s.v}</p>
+            <p className="mt-1.5 font-mono-eng text-[8.5px] uppercase tracking-[0.18em] text-ink/55 truncate">{s.l}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA bar */}
+      <div className="flex items-center justify-between border-t border-ink/10 bg-sand-100 px-4 py-3.5">
+        <span className="font-mono-eng text-[10px] uppercase tracking-[0.22em] text-ink/65">
+          {endCard.cta}
+        </span>
+        <svg className="h-4 w-4 text-primary transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </div>
+    </article>
   );
 }

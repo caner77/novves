@@ -15,10 +15,10 @@
   --dark: #0F172A;
 
   /* Sand */
-  --sand-100: #fbf7ee;
-  --sand-200: #f4efe4;
-  --sand-300: #eae4d3;
-  --sand-400: #d9d2bd;
+  --sand-100: #e9eae2;
+  --sand-200: #e9eae2;
+  --sand-300: #dcdcd2;
+  --sand-400: #c8c8be;
   --light: #e9e9e1;
 
   /* Grays */
@@ -97,17 +97,9 @@ body {
 }
 
 /* Blueprint — sparse, technical */
-.blueprint-grid-light {
-  background-image:
-    linear-gradient(rgba(10, 14, 20, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 14, 20, 0.05) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
+.blueprint-grid-light,
 .blueprint-grid-dark {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 80px 80px;
+  background-image: none;
 }
 
 /* Grain — subtle film overlay */

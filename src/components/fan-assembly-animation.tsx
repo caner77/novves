@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const TOTAL_FRAMES = 211;
@@ -41,81 +42,140 @@ type HeroDict = {
 
 function MobileHero({ dict, locale }: { dict: HeroDict; locale: string }) {
   return (
-    <section className="relative bg-sand-200 lg:hidden">
-      <div className="absolute inset-0 blueprint-grid-light opacity-60" />
+    <section className="relative bg-sand-200 pt-[80px] lg:hidden">
+      {/* Top meta */}
+      <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3 font-mono-eng text-[10px] uppercase tracking-[0.22em] text-ink/55">
+        <div className="flex items-center gap-3">
+          <span className="text-primary">[ 01 ]</span>
+          <span>— Hero</span>
+        </div>
+        <span className="truncate pl-3 text-ink/45">{dict.heroLabel ?? dict.endCard.series}</span>
+      </div>
 
-      <div className="relative">
-        {/* Top meta bar */}
-        <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3 font-mono-eng text-[10px] uppercase tracking-[0.2em] text-ink/55">
-          <span>[ 01 ] — Hero</span>
-          <span>{dict.heroLabel ?? dict.endCard.series}</span>
+      {/* Hero copy */}
+      <div className="px-5 pb-9 pt-8">
+        <div className="flex items-center gap-3">
+          <span className="h-px w-6 bg-primary" />
+          <span className="font-mono-eng text-[10px] uppercase tracking-[0.28em] text-primary">
+            {dict.badge}
+          </span>
         </div>
 
-        {/* Fan illustration */}
-        <div className="relative overflow-hidden" style={{ height: "54vh", minHeight: "340px" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/animation/frames/frame-0120.jpg"
-            alt={dict.endCard.title}
-            className="h-full w-full object-cover object-[65%_center]"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-sand-200 via-transparent to-transparent" />
-        </div>
+        <h1 className="mt-6">
+          <span className="block text-[17px] font-medium text-ink/55">{dict.titleLine1}</span>
+          <span
+            className="mt-2 block font-bold text-ink break-words"
+            style={{ fontSize: "clamp(2.2rem, 10vw, 3.8rem)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
+          >
+            {dict.titleLine2}
+          </span>
+          <span className="mt-2 block text-[19px] font-normal text-ink/75">{dict.titleLine3}</span>
+        </h1>
 
-        {/* Copy block */}
-        <div className="relative px-5 pb-10 pt-8">
-          <p className="font-mono-eng text-[10px] uppercase tracking-[0.28em] text-primary">
-            ● {dict.badge}
-          </p>
+        <p className="mt-6 text-[14.5px] leading-[1.65] text-ink/70">{dict.subtitle}</p>
+      </div>
 
-          <h1 className="mt-6">
-            <span className="block text-[18px] font-medium text-ink/55">
-              {dict.titleLine1}
-            </span>
-            <span className="font-display mt-2 block italic text-ink" style={{ fontSize: "clamp(3rem, 14vw, 5rem)", lineHeight: 0.95 }}>
-              {dict.titleLine2}
-            </span>
-            <span className="mt-2 block text-[22px] font-normal text-ink/75">
-              {dict.titleLine3}
-            </span>
-          </h1>
+      {/* Featured product card */}
+      <div className="px-5">
+        <Link href={`/${locale}/urunler/hava-hareketi`} className="group block">
+          <article className="relative overflow-hidden border border-ink/12 bg-white">
+            {/* Corner marks */}
+            <div className="pointer-events-none absolute left-0 top-0 h-3 w-3 border-l border-t border-ink/35 z-20" />
+            <div className="pointer-events-none absolute right-0 top-0 h-3 w-3 border-r border-t border-ink/35 z-20" />
+            <div className="pointer-events-none absolute bottom-0 left-0 h-3 w-3 border-b border-l border-ink/35 z-20" />
+            <div className="pointer-events-none absolute bottom-0 right-0 h-3 w-3 border-b border-r border-ink/35 z-20" />
 
-          <p className="mt-7 max-w-md text-[14.5px] leading-[1.7] text-ink/70">
-            {dict.subtitle}
-          </p>
-
-          <div className="mt-9 flex flex-col gap-3">
-            <Link
-              href={`/${locale}/iletisim`}
-              className="group inline-flex w-full items-center justify-between rounded-none bg-ink px-6 py-4 text-[11px] font-medium uppercase tracking-[0.22em] text-sand-100 transition-all duration-300 hover:bg-primary"
-            >
-              <span>{dict.ctaPrimary}</span>
-              <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-            <Link
-              href={`/${locale}/urunler/hava-hareketi`}
-              className="group inline-flex w-full items-center justify-between border border-ink/15 px-6 py-4 text-[11px] font-medium uppercase tracking-[0.22em] text-ink/75 transition-all duration-300 hover:border-primary hover:text-primary"
-            >
-              <span>{dict.ctaSecondary}</span>
-              <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-
-        {/* Stats band — industrial metadata strip */}
-        <div className="relative border-y border-ink/10 bg-sand-100">
-          <div className="grid grid-cols-2 divide-x divide-ink/10">
-            {dict.stats.map((s, i) => (
-              <div key={s.label} className={`px-5 py-5 ${i >= 2 ? "border-t border-ink/10" : ""}`}>
-                <p className="font-display text-[2.2rem] leading-none text-ink">{s.value}</p>
-                <p className="mt-2 font-mono-eng text-[9.5px] uppercase tracking-[0.2em] text-ink/55">{s.label}</p>
+            <div className="relative aspect-[5/4] w-full bg-sand-200">
+              {/* Series badge */}
+              <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 bg-ink/85 px-2.5 py-1 font-mono-eng text-[9px] uppercase tracking-[0.22em] text-sand-100 backdrop-blur-sm">
+                <span className="text-primary">◆</span> {dict.endCard.series}
               </div>
-            ))}
-          </div>
+              <div className="absolute right-4 top-4 z-10 inline-flex items-center gap-1.5 border border-ink/15 bg-white/90 px-2.5 py-1 font-mono-eng text-[9px] uppercase tracking-[0.22em] text-ink/65 backdrop-blur-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> {dict.endCard.spec3Value}
+              </div>
+
+              <Image
+                src="/animation/frames/frame-0211.jpg"
+                alt={dict.endCard.title}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                style={{ objectPosition: "60% center", filter: "contrast(1.05) saturate(1.08)" }}
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white/95 via-white/60 to-transparent" />
+
+              {/* Title overlay */}
+              <div className="absolute inset-x-0 bottom-0 p-4">
+                <p className="font-mono-eng text-[10px] uppercase tracking-[0.22em] text-ink/55">
+                  Featured Product
+                </p>
+                <h3 className="mt-1 font-bold text-ink" style={{ fontSize: "1.5rem", lineHeight: 1.1, letterSpacing: "-0.015em" }}>
+                  {dict.endCard.title}
+                </h3>
+              </div>
+            </div>
+
+            {/* Specs */}
+            <div className="grid grid-cols-3 divide-x divide-ink/10 border-t border-ink/10">
+              {[
+                { v: dict.endCard.spec1Value, l: dict.endCard.spec1Label },
+                { v: dict.endCard.spec2Value, l: dict.endCard.spec2Label },
+                { v: dict.endCard.spec3Value, l: dict.endCard.spec3Label },
+              ].map((s) => (
+                <div key={s.l} className="px-3 py-3.5 text-center">
+                  <p className="font-bold text-[1.05rem] leading-none text-ink">{s.v}</p>
+                  <p className="mt-1.5 font-mono-eng text-[8.5px] uppercase tracking-[0.18em] text-ink/55 truncate">{s.l}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA bar */}
+            <div className="flex items-center justify-between border-t border-ink/10 bg-sand-100 px-4 py-3.5">
+              <span className="font-mono-eng text-[10px] uppercase tracking-[0.22em] text-ink/65">
+                {dict.endCard.cta}
+              </span>
+              <svg className="h-4 w-4 text-primary transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </article>
+        </Link>
+      </div>
+
+      {/* Main CTAs */}
+      <div className="mt-8 px-5">
+        <div className="flex flex-col gap-3">
+          <Link
+            href={`/${locale}/iletisim`}
+            className="group inline-flex w-full items-center justify-between bg-ink px-6 py-4 text-[11px] font-medium uppercase tracking-[0.22em] text-sand-100 transition-all duration-300 hover:bg-primary"
+          >
+            <span>{dict.ctaPrimary}</span>
+            <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+          <Link
+            href={`/${locale}/urunler/hava-hareketi`}
+            className="group inline-flex w-full items-center justify-between border border-ink/15 px-6 py-4 text-[11px] font-medium uppercase tracking-[0.22em] text-ink/75 transition-all duration-300 hover:border-primary hover:text-primary"
+          >
+            <span>{dict.ctaSecondary}</span>
+            <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+      </div>
+
+      {/* Stats grid */}
+      <div className="mt-10 border-y border-ink/12 bg-sand-100">
+        <div className="grid grid-cols-2 divide-x divide-ink/10">
+          {dict.stats.map((s, i) => (
+            <div key={s.label} className={`px-5 py-6 ${i >= 2 ? "border-t border-ink/10" : ""}`}>
+              <p className="font-bold text-[2rem] leading-none text-ink">{s.value}</p>
+              <p className="mt-2 font-mono-eng text-[9px] uppercase tracking-[0.22em] text-ink/55">{s.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -132,9 +192,9 @@ export function FanAssemblyAnimation({ dict, locale }: { dict: HeroDict; locale:
   const overlayRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const endCardRef = useRef<HTMLDivElement>(null);
   const scrollHintRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
+  const endCardRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const currentFrameRef = useRef(0);
   const rafRef = useRef<number>(0);
@@ -142,7 +202,7 @@ export function FanAssemblyAnimation({ dict, locale }: { dict: HeroDict; locale:
   const preloadImages = useCallback(() => {
     const images: HTMLImageElement[] = [];
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
-      const img = new Image();
+      const img = new window.Image();
       img.src = getFrameSrc(i);
       images.push(img);
     }
@@ -285,10 +345,10 @@ export function FanAssemblyAnimation({ dict, locale }: { dict: HeroDict; locale:
                   {dict.titleLine1}
                 </span>
                 <span
-                  className="font-display mt-1 block italic text-ink"
+                  className="mt-1 block font-bold text-ink break-words"
                   style={{
-                    fontSize: "clamp(3.8rem, 6.4vw, 7.6rem)",
-                    lineHeight: 0.93,
+                    fontSize: "clamp(2.6rem, 4.4vw, 5.6rem)",
+                    lineHeight: 1.05,
                     letterSpacing: "-0.025em",
                   }}
                 >
@@ -332,7 +392,7 @@ export function FanAssemblyAnimation({ dict, locale }: { dict: HeroDict; locale:
             <div className="grid grid-cols-4 divide-x divide-ink/10">
               {dict.stats.map((s) => (
                 <div key={s.label} className="px-6 py-5 xl:px-10">
-                  <p className="font-display text-[2.2rem] leading-none text-ink">{s.value}</p>
+                  <p className="font-bold text-[2.2rem] leading-none text-ink">{s.value}</p>
                   <p className="mt-2 font-mono-eng text-[9.5px] uppercase tracking-[0.22em] text-ink/55">{s.label}</p>
                 </div>
               ))}
@@ -350,7 +410,7 @@ export function FanAssemblyAnimation({ dict, locale }: { dict: HeroDict; locale:
                     ◆ {dict.endCard.series}
                   </p>
 
-                  <h2 className="font-display mt-6 italic text-ink" style={{ fontSize: "clamp(2.4rem, 3.2vw, 3.6rem)", lineHeight: 0.95, letterSpacing: "-0.02em" }}>
+                  <h2 className="mt-6 font-bold text-ink" style={{ fontSize: "clamp(2.2rem, 3vw, 3.2rem)", lineHeight: 1.05, letterSpacing: "-0.02em" }}>
                     {dict.endCard.title}
                   </h2>
 
@@ -365,7 +425,7 @@ export function FanAssemblyAnimation({ dict, locale }: { dict: HeroDict; locale:
                       { v: dict.endCard.spec3Value, l: dict.endCard.spec3Label },
                     ].map((s) => (
                       <div key={s.l} className="py-4 pl-4 first:pl-0">
-                        <p className="font-display text-[1.8rem] leading-none text-ink">{s.v}</p>
+                        <p className="font-bold text-[1.6rem] leading-none text-ink">{s.v}</p>
                         <p className="mt-1.5 font-mono-eng text-[9px] uppercase tracking-[0.2em] text-ink/55">{s.l}</p>
                       </div>
                     ))}

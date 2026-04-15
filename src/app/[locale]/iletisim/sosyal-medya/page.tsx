@@ -53,7 +53,7 @@ type PlatformDefinition = {
   iconClass: string;
   ringClass: string;
   glow: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
 };
 
 const pageCopy: Record<Locale, LocalizedPageCopy> = {
